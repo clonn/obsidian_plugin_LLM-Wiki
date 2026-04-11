@@ -1,4 +1,4 @@
-- [ ] Build the Python KB tools (ingest/compile/query/lint)
+- [x] Build the Python KB tools (ingest/compile/query/lint)
 
 ## Why
 The plugin is the UI; the tools are the engine. Each tool is a tiny python
