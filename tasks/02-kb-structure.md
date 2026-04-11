@@ -1,4 +1,4 @@
-- [ ] Create KB skeleton inside the vault
+- [x] Create KB skeleton inside the vault
 
 ## Why
 Karpathy's architecture needs `raw/`, `wiki/`, `index.md`, `log.md` directly
