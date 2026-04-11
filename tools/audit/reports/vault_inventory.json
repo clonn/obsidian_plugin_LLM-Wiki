@@ -1,47 +1,51 @@
 {
   "audit": {
     "vault": "/Users/caesarchi/Dropbox/caesar_obsidian",
-    "total_files": 142,
-    "total_bytes": 42693487,
+    "total_files": 152,
+    "total_bytes": 42697714,
     "by_ext": {
-      ".png": 32,
-      ".md": 103,
+      "": 7,
+      ".md": 108,
       ".txt": 1,
-      "": 2,
+      ".png": 32,
       ".canvas": 2,
       ".base": 1,
       ".html": 1
     },
     "by_top_dir": {
-      "<root>": 61,
-      "caesar_vault": 81
+      "<root>": 4,
+      "wiki": 5,
+      "notes": 57,
+      "_archive": 4,
+      "caesar_vault": 81,
+      "raw": 1
     },
-    "md_count": 103,
+    "md_count": 108,
     "image_count": 32,
     "empty_md": [],
     "tiny_md": [
-      "stock analytics.md",
+      "_archive/tiny/stock analytics.md",
       "caesar_vault/cympotek/cympack prompt.md"
     ],
     "largest_files": [
       [
-        "Pasted image 20251202174114.png",
+        "notes/assets/Pasted image 20251202174114.png",
         5552789
       ],
       [
-        "Pasted image 20251209151749.png",
+        "notes/assets/Pasted image 20251209151749.png",
         4060505
       ],
       [
-        "Pasted image 20251204135444.png",
+        "notes/assets/Pasted image 20251204135444.png",
         3870015
       ],
       [
-        "Pasted image 20251210114317.png",
+        "notes/assets/Pasted image 20251210114317.png",
         3723032
       ],
       [
-        "Pasted image 20251204165656.png",
+        "notes/assets/Pasted image 20251204165656.png",
         3449023
       ],
       [
@@ -49,15 +53,15 @@
         2497279
       ],
       [
-        "Pasted image 20251202181359.png",
+        "notes/assets/Pasted image 20251202181359.png",
         2421996
       ],
       [
-        "Pasted image 20251213233130.png",
+        "notes/assets/Pasted image 20251213233130.png",
         1776368
       ],
       [
-        "Pasted image 20260101010911.png",
+        "notes/assets/Pasted image 20260101010911.png",
         1391650
       ],
       [
@@ -65,23 +69,23 @@
         1242143
       ],
       [
-        "Pasted image 20251202174103.png",
+        "notes/assets/Pasted image 20251202174103.png",
         1100347
       ],
       [
-        "Pasted image 20251202174156.png",
+        "notes/assets/Pasted image 20251202174156.png",
         1043978
       ],
       [
-        "Pasted image 20251204165528.png",
+        "notes/assets/Pasted image 20251204165528.png",
         982264
       ],
       [
-        "Pasted image 20251202174405.png",
+        "notes/assets/Pasted image 20251202174405.png",
         879754
       ],
       [
-        "Pasted image 20251202174251.png",
+        "notes/assets/Pasted image 20251202174251.png",
         818340
       ],
       [
@@ -89,7 +93,7 @@
         815518
       ],
       [
-        "Pasted image 20251202174237.png",
+        "notes/assets/Pasted image 20251202174237.png",
         810364
       ],
       [
@@ -106,6 +110,11 @@
       ]
     ],
     "suspected_duplicates_by_title": {
+      "readme": [
+        "wiki/README.md",
+        "_archive/README.md",
+        "raw/README.md"
+      ],
       "台灣政府七月底最新統計資料綜合分析報告": [
         "caesar_vault/台灣政府七月底最新統計資料綜合分析報告.md",
         "caesar_vault/blog/台灣政府七月底最新統計資料綜合分析報告.md"
@@ -113,17 +122,17 @@
     },
     "suspected_duplicates_by_hash": {
       "604cf7becf80": [
-        "Cymkube 戰略規劃藍圖 (2025 Ver.).md",
-        "傳討企業自動化問題及Agen協作模式.md"
+        "notes/sowork/傳討企業自動化問題及Agen協作模式.md",
+        "notes/cymkube/Cymkube 戰略規劃藍圖 (2025 Ver.).md"
       ],
       "c6bd1a79fbce": [
-        "cymkube 1月策略.md",
-        "台灣壓克力客製化市場分析報告.md",
-        "**Cymkube（3D 客製化列印與公仔業務）**.md"
+        "notes/cymkube/cymkube 1月策略.md",
+        "notes/cymkube/台灣壓克力客製化市場分析報告.md",
+        "notes/cymkube/Cymkube（3D 客製化列印與公仔業務）.md"
       ],
       "e33be994611e": [
-        "Chandra OCR 本地部署與實測驗證完整指南.md",
-        "AI 加速人力資源人才招募完整指南.md"
+        "notes/ai-tooling/Chandra OCR 本地部署與實測驗證完整指南.md",
+        "notes/ai-tooling/AI 加速人力資源人才招募完整指南.md"
       ],
       "4f8218e8e0cc": [
         "caesar_vault/Untitled.md",
@@ -138,120 +147,10 @@
         "caesar_vault/blog/八月新局面，美國全球關稅政策深度衝擊，全球貿易體系迎來新變局.md"
       ]
     },
-    "cjk_md_count": 85,
-    "top_level_md_at_root": 43
+    "cjk_md_count": 90,
+    "top_level_md_at_root": 2
   },
   "records": [
-    {
-      "path": "Pasted image 20251209151749.png",
-      "size": 4060505,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251209151749",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "cymkube 三月份.md",
-      "size": 2206,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "cymkube 三月份",
-      "cjk_ratio": 0.111,
-      "first_line": "",
-      "sha1_8": "af44a28c119e"
-    },
-    {
-      "path": "永豐&藍新交易資料.md",
-      "size": 209,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "永豐&藍新交易資料",
-      "cjk_ratio": 0.03,
-      "first_line": "",
-      "sha1_8": "7cbcf08e04cf"
-    },
-    {
-      "path": "Cymkube.md",
-      "size": 2615,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "Cymkube",
-      "cjk_ratio": 0.631,
-      "first_line": "",
-      "sha1_8": "8e0f3406bea8"
-    },
-    {
-      "path": "OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來.md",
-      "size": 52959,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來",
-      "cjk_ratio": 0.631,
-      "first_line": "![[記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅.txt]]",
-      "sha1_8": "21555abeb225"
-    },
-    {
-      "path": "正美零售與通路模式.md",
-      "size": 2869,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "正美零售與通路模式",
-      "cjk_ratio": 0.456,
-      "first_line": "",
-      "sha1_8": "e4f6426ff4de"
-    },
-    {
-      "path": "AI 簡報工具的真實與想像：一場智慧呈現的革命.md",
-      "size": 9713,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "AI 簡報工具的真實與想像：一場智慧呈現的革命",
-      "cjk_ratio": 0.718,
-      "first_line": "",
-      "sha1_8": "6640a02a47d9"
-    },
-    {
-      "path": "stock analytics.md",
-      "size": 99,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "stock analytics",
-      "cjk_ratio": 0.49,
-      "first_line": "",
-      "sha1_8": "2388b75ab572"
-    },
-    {
-      "path": "記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅.txt",
-      "size": 25453,
-      "ext": ".txt",
-      "top_dir": "<root>",
-      "title": "記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅",
-      "cjk_ratio": 0.581,
-      "first_line": "﻿數位關鍵字｜OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來",
-      "sha1_8": "538ec8c9f118"
-    },
-    {
-      "path": "1人公司戶政事務所.md",
-      "size": 6073,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "1人公司戶政事務所",
-      "cjk_ratio": 0.514,
-      "first_line": "",
-      "sha1_8": "ea917eedefbf"
-    },
-    {
-      "path": "Cymkube 戰略規劃藍圖 (2025 Ver.).md",
-      "size": 5146,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "Cymkube 戰略規劃藍圖 (2025 Ver.)",
-      "cjk_ratio": 0.403,
-      "first_line": "",
-      "sha1_8": "604cf7becf80"
-    },
     {
       "path": ".DS_Store",
       "size": 6148,
@@ -263,494 +162,694 @@
       "sha1_8": ""
     },
     {
-      "path": "許願.md",
-      "size": 1520,
+      "path": "log.md",
+      "size": 636,
       "ext": ".md",
       "top_dir": "<root>",
-      "title": "許願",
-      "cjk_ratio": 0.856,
-      "first_line": "你好 Tom,",
-      "sha1_8": "07d7b76d069e"
+      "title": "log",
+      "cjk_ratio": 0.174,
+      "first_line": "---",
+      "sha1_8": "b4b8333613e8"
     },
     {
-      "path": "何大資訊.md",
-      "size": 2805,
-      "ext": ".md",
+      "path": ".gitignore",
+      "size": 101,
+      "ext": "",
       "top_dir": "<root>",
-      "title": "何大資訊",
-      "cjk_ratio": 0.304,
-      "first_line": "",
-      "sha1_8": "4f80d756f6ea"
-    },
-    {
-      "path": "共生型企業作業系統-草稿 draft.md",
-      "size": 5569,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "共生型企業作業系統-草稿 draft",
-      "cjk_ratio": 0.385,
-      "first_line": "",
-      "sha1_8": "01688c8e18e7"
-    },
-    {
-      "path": "notebooklm to pdf to text and image.md",
-      "size": 688,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "notebooklm to pdf to text and image",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": "86e1bbc048e5"
-    },
-    {
-      "path": "Pasted image 20251202174251.png",
-      "size": 818340,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251202174251",
+      "title": ".gitignore",
       "cjk_ratio": 0.0,
       "first_line": "",
       "sha1_8": ""
     },
     {
-      "path": "value proposition, 價值主張定位.md",
-      "size": 2562,
+      "path": "index.md",
+      "size": 1133,
       "ext": ".md",
       "top_dir": "<root>",
-      "title": "value proposition, 價值主張定位",
-      "cjk_ratio": 0.647,
-      "first_line": "",
-      "sha1_8": "c394ab6d831b"
+      "title": "index",
+      "cjk_ratio": 0.153,
+      "first_line": "---",
+      "sha1_8": "35169eaac9ae"
     },
     {
-      "path": "API KEY.md",
-      "size": 2353,
+      "path": "wiki/README.md",
+      "size": 1042,
       "ext": ".md",
-      "top_dir": "<root>",
-      "title": "API KEY",
-      "cjk_ratio": 0.024,
-      "first_line": "",
-      "sha1_8": "391e65491301"
+      "top_dir": "wiki",
+      "title": "README",
+      "cjk_ratio": 0.189,
+      "first_line": "# wiki/ — 概念知識庫",
+      "sha1_8": "06b1c5e5bc89"
     },
     {
-      "path": "Claude Skill 教學.md",
-      "size": 14973,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "Claude Skill 教學",
-      "cjk_ratio": 0.379,
-      "first_line": "",
-      "sha1_8": "2acee1eb6895"
-    },
-    {
-      "path": "cymkube 1月策略.md",
-      "size": 6820,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "cymkube 1月策略",
-      "cjk_ratio": 0.492,
-      "first_line": "",
-      "sha1_8": "c6bd1a79fbce"
-    },
-    {
-      "path": "Pasted image 20251202174237.png",
-      "size": 810364,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251202174237",
+      "path": "wiki/derived/.gitkeep",
+      "size": 0,
+      "ext": "",
+      "top_dir": "wiki",
+      "title": ".gitkeep",
       "cjk_ratio": 0.0,
       "first_line": "",
       "sha1_8": ""
     },
     {
-      "path": "Chandra OCR 本地部署與實測驗證完整指南.md",
-      "size": 7279,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "Chandra OCR 本地部署與實測驗證完整指南",
-      "cjk_ratio": 0.51,
-      "first_line": "",
-      "sha1_8": "e33be994611e"
-    },
-    {
-      "path": "生成式引擎優AT（GEO）：AI 時代的增長策略與指標.md",
-      "size": 13693,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "生成式引擎優AT（GEO）：AI 時代的增長策略與指標",
-      "cjk_ratio": 0.613,
-      "first_line": "",
-      "sha1_8": "e9446ee5138a"
-    },
-    {
-      "path": "Pasted image 20260101010911.png",
-      "size": 1391650,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20260101010911",
+      "path": "wiki/projects/.gitkeep",
+      "size": 0,
+      "ext": "",
+      "top_dir": "wiki",
+      "title": ".gitkeep",
       "cjk_ratio": 0.0,
       "first_line": "",
       "sha1_8": ""
     },
     {
-      "path": "未命名.canvas",
-      "size": 2,
-      "ext": ".canvas",
-      "top_dir": "<root>",
-      "title": "未命名",
-      "cjk_ratio": 0.0,
-      "first_line": "{}",
-      "sha1_8": "bf21a9e8fbc5"
-    },
-    {
-      "path": "DX Team 月會.md",
-      "size": 3497,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "DX Team 月會",
-      "cjk_ratio": 0.377,
-      "first_line": "",
-      "sha1_8": "5aed8721425e"
-    },
-    {
-      "path": "cymkube sdk for page.md",
-      "size": 1775,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "cymkube sdk for page",
-      "cjk_ratio": 0.233,
-      "first_line": "",
-      "sha1_8": "bf66e0629901"
-    },
-    {
-      "path": "Pasted image 20251202174156.png",
-      "size": 1043978,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251202174156",
+      "path": "wiki/people/.gitkeep",
+      "size": 0,
+      "ext": "",
+      "top_dir": "wiki",
+      "title": ".gitkeep",
       "cjk_ratio": 0.0,
       "first_line": "",
       "sha1_8": ""
     },
     {
-      "path": "Pasted image 20251210114317.png",
-      "size": 3723032,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251210114317",
+      "path": "wiki/concepts/.gitkeep",
+      "size": 0,
+      "ext": "",
+      "top_dir": "wiki",
+      "title": ".gitkeep",
       "cjk_ratio": 0.0,
       "first_line": "",
       "sha1_8": ""
     },
     {
-      "path": "sowork staging.md",
-      "size": 1775,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "sowork staging",
-      "cjk_ratio": 0.037,
-      "first_line": "",
-      "sha1_8": "c9766a1153eb"
-    },
-    {
-      "path": "台灣壓克力客製化市場分析報告.md",
-      "size": 6820,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "台灣壓克力客製化市場分析報告",
-      "cjk_ratio": 0.492,
-      "first_line": "",
-      "sha1_8": "c6bd1a79fbce"
-    },
-    {
-      "path": "openclaw muliti user session data.md",
-      "size": 16186,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "openclaw muliti user session data",
-      "cjk_ratio": 0.63,
-      "first_line": "",
-      "sha1_8": "3e0aba5b1601"
-    },
-    {
-      "path": "blog - ai 目前短暫結論.md",
+      "path": "notes/blog-drafts/blog - ai 目前短暫結論.md",
       "size": 4228,
       "ext": ".md",
-      "top_dir": "<root>",
+      "top_dir": "notes",
       "title": "blog - ai 目前短暫結論",
       "cjk_ratio": 0.734,
       "first_line": "",
       "sha1_8": "4f61e4086e89"
     },
     {
-      "path": "Pasted image 20251204135444.png",
-      "size": 3870015,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251204135444",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "project_slide_inpaiting for notebookLM 的項目.md",
-      "size": 840,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "project_slide_inpaiting for notebookLM 的項目",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": "a2960d1302bc"
-    },
-    {
-      "path": "prompt.md",
-      "size": 526,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "prompt",
-      "cjk_ratio": 0.539,
-      "first_line": "",
-      "sha1_8": "94f4722d09d4"
-    },
-    {
-      "path": "MBTI template and prompt.md",
-      "size": 5985,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "MBTI template and prompt",
-      "cjk_ratio": 0.036,
-      "first_line": "",
-      "sha1_8": "358bcf8133c2"
-    },
-    {
-      "path": "Pasted image 20251204165528.png",
-      "size": 982264,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251204165528",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "Pasted image 20251213233130.png",
-      "size": 1776368,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251213233130",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "OpenClaw 造成一股熱潮，對於商業上是什麼意義？.md",
-      "size": 2761,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "OpenClaw 造成一股熱潮，對於商業上是什麼意義？",
-      "cjk_ratio": 0.688,
-      "first_line": "",
-      "sha1_8": "098fff6e1ee6"
-    },
-    {
-      "path": "Azure VM Server.md",
-      "size": 1994,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "Azure VM Server",
-      "cjk_ratio": 0.125,
-      "first_line": "",
-      "sha1_8": "58f99d0c3805"
-    },
-    {
-      "path": "Nanobanana pro image generate prompt.md",
-      "size": 16554,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "Nanobanana pro image generate prompt",
-      "cjk_ratio": 0.09,
-      "first_line": "",
-      "sha1_8": "4d50026c44ba"
-    },
-    {
-      "path": "Pasted image 20251202174405.png",
-      "size": 879754,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251202174405",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "DX Team, cymkube.md",
-      "size": 789,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "DX Team, cymkube",
-      "cjk_ratio": 0.529,
-      "first_line": "",
-      "sha1_8": "714a16a08b6d"
-    },
-    {
-      "path": "**Cymkube（3D 客製化列印與公仔業務）**.md",
-      "size": 6820,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "**Cymkube（3D 客製化列印與公仔業務）**",
-      "cjk_ratio": 0.492,
-      "first_line": "",
-      "sha1_8": "c6bd1a79fbce"
-    },
-    {
-      "path": "AI 加速人力資源人才招募完整指南.md",
-      "size": 7279,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "AI 加速人力資源人才招募完整指南",
-      "cjk_ratio": 0.51,
-      "first_line": "",
-      "sha1_8": "e33be994611e"
-    },
-    {
-      "path": "功能模組完整介紹-sowork.md",
-      "size": 115371,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "功能模組完整介紹-sowork",
-      "cjk_ratio": 0.531,
-      "first_line": "",
-      "sha1_8": "f3785cb6d9cf"
-    },
-    {
-      "path": "**透過沙箱技術讓 Claude Code 更安全自主**.md",
-      "size": 7736,
-      "ext": ".md",
-      "top_dir": "<root>",
-      "title": "**透過沙箱技術讓 Claude Code 更安全自主**",
-      "cjk_ratio": 0.64,
-      "first_line": "",
-      "sha1_8": "248b81de14db"
-    },
-    {
-      "path": "Pasted image 20251204165656.png",
-      "size": 3449023,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251204165656",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "blog -This is a short conclusion as of February 2026..md",
+      "path": "notes/blog-drafts/blog -This is a short conclusion as of February 2026..md",
       "size": 4533,
       "ext": ".md",
-      "top_dir": "<root>",
+      "top_dir": "notes",
       "title": "blog -This is a short conclusion as of February 2026.",
       "cjk_ratio": 0.0,
       "first_line": "",
       "sha1_8": "a63bfa0b0edc"
     },
     {
-      "path": "介紹 Bloom：用於自動化行為評估的開源工具.md",
-      "size": 6648,
+      "path": "notes/infra/API KEY.md",
+      "size": 2353,
       "ext": ".md",
-      "top_dir": "<root>",
-      "title": "介紹 Bloom：用於自動化行為評估的開源工具",
-      "cjk_ratio": 0.591,
+      "top_dir": "notes",
+      "title": "API KEY",
+      "cjk_ratio": 0.024,
       "first_line": "",
-      "sha1_8": "55dbc8a2d95b"
+      "sha1_8": "391e65491301"
     },
     {
-      "path": "未命名.base",
-      "size": 0,
-      "ext": ".base",
-      "top_dir": "<root>",
-      "title": "未命名",
-      "cjk_ratio": 0.0,
+      "path": "notes/infra/Azure VM Server.md",
+      "size": 1994,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "Azure VM Server",
+      "cjk_ratio": 0.125,
       "first_line": "",
-      "sha1_8": ""
+      "sha1_8": "58f99d0c3805"
     },
     {
-      "path": "openclaw vm and deploy version.md",
+      "path": "notes/openclaw/OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來.md",
+      "size": 52959,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來",
+      "cjk_ratio": 0.631,
+      "first_line": "![[記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅.txt]]",
+      "sha1_8": "21555abeb225"
+    },
+    {
+      "path": "notes/openclaw/記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅.txt",
+      "size": 25453,
+      "ext": ".txt",
+      "top_dir": "notes",
+      "title": "記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅",
+      "cjk_ratio": 0.581,
+      "first_line": "﻿數位關鍵字｜OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來",
+      "sha1_8": "538ec8c9f118"
+    },
+    {
+      "path": "notes/openclaw/openclaw muliti user session data.md",
+      "size": 16186,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "openclaw muliti user session data",
+      "cjk_ratio": 0.63,
+      "first_line": "",
+      "sha1_8": "3e0aba5b1601"
+    },
+    {
+      "path": "notes/openclaw/OpenClaw 造成一股熱潮，對於商業上是什麼意義？.md",
+      "size": 2761,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "OpenClaw 造成一股熱潮，對於商業上是什麼意義？",
+      "cjk_ratio": 0.688,
+      "first_line": "",
+      "sha1_8": "098fff6e1ee6"
+    },
+    {
+      "path": "notes/openclaw/openclaw vm and deploy version.md",
       "size": 4872,
       "ext": ".md",
-      "top_dir": "<root>",
+      "top_dir": "notes",
       "title": "openclaw vm and deploy version",
       "cjk_ratio": 0.052,
       "first_line": "",
       "sha1_8": "1a6ecf095eb4"
     },
     {
-      "path": "Pasted image 20251202174103.png",
-      "size": 1100347,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251202174103",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "Pasted image 20251202174114.png",
-      "size": 5552789,
-      "ext": ".png",
-      "top_dir": "<root>",
-      "title": "Pasted image 20251202174114",
-      "cjk_ratio": 0.0,
-      "first_line": "",
-      "sha1_8": ""
-    },
-    {
-      "path": "軟包整體規劃.md",
-      "size": 3719,
+      "path": "notes/people-meetings/何大資訊.md",
+      "size": 2805,
       "ext": ".md",
-      "top_dir": "<root>",
-      "title": "軟包整體規劃",
-      "cjk_ratio": 0.523,
+      "top_dir": "notes",
+      "title": "何大資訊",
+      "cjk_ratio": 0.304,
       "first_line": "",
-      "sha1_8": "690d406c1bc5"
+      "sha1_8": "4f80d756f6ea"
     },
     {
-      "path": "agent flow.md",
-      "size": 2189,
+      "path": "notes/sowork/共生型企業作業系統-草稿 draft.md",
+      "size": 5569,
       "ext": ".md",
-      "top_dir": "<root>",
-      "title": "agent flow",
-      "cjk_ratio": 0.667,
+      "top_dir": "notes",
+      "title": "共生型企業作業系統-草稿 draft",
+      "cjk_ratio": 0.385,
       "first_line": "",
-      "sha1_8": "5cccc0979ce3"
+      "sha1_8": "01688c8e18e7"
     },
     {
-      "path": "傳討企業自動化問題及Agen協作模式.md",
+      "path": "notes/sowork/sowork staging.md",
+      "size": 1775,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "sowork staging",
+      "cjk_ratio": 0.037,
+      "first_line": "",
+      "sha1_8": "c9766a1153eb"
+    },
+    {
+      "path": "notes/sowork/功能模組完整介紹-sowork.md",
+      "size": 115371,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "功能模組完整介紹-sowork",
+      "cjk_ratio": 0.531,
+      "first_line": "",
+      "sha1_8": "f3785cb6d9cf"
+    },
+    {
+      "path": "notes/sowork/傳討企業自動化問題及Agen協作模式.md",
       "size": 5146,
       "ext": ".md",
-      "top_dir": "<root>",
+      "top_dir": "notes",
       "title": "傳討企業自動化問題及Agen協作模式",
       "cjk_ratio": 0.403,
       "first_line": "",
       "sha1_8": "604cf7becf80"
     },
     {
-      "path": "Pasted image 20251202181359.png",
+      "path": "notes/business/1人公司戶政事務所.md",
+      "size": 6073,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "1人公司戶政事務所",
+      "cjk_ratio": 0.514,
+      "first_line": "",
+      "sha1_8": "ea917eedefbf"
+    },
+    {
+      "path": "notes/business/許願.md",
+      "size": 1520,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "許願",
+      "cjk_ratio": 0.856,
+      "first_line": "你好 Tom,",
+      "sha1_8": "07d7b76d069e"
+    },
+    {
+      "path": "notes/finance/永豐&藍新交易資料.md",
+      "size": 209,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "永豐&藍新交易資料",
+      "cjk_ratio": 0.03,
+      "first_line": "",
+      "sha1_8": "7cbcf08e04cf"
+    },
+    {
+      "path": "notes/cymkube/cymkube 三月份.md",
+      "size": 2206,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "cymkube 三月份",
+      "cjk_ratio": 0.111,
+      "first_line": "",
+      "sha1_8": "af44a28c119e"
+    },
+    {
+      "path": "notes/cymkube/Cymkube.md",
+      "size": 2615,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "Cymkube",
+      "cjk_ratio": 0.631,
+      "first_line": "",
+      "sha1_8": "8e0f3406bea8"
+    },
+    {
+      "path": "notes/cymkube/正美零售與通路模式.md",
+      "size": 2869,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "正美零售與通路模式",
+      "cjk_ratio": 0.456,
+      "first_line": "",
+      "sha1_8": "e4f6426ff4de"
+    },
+    {
+      "path": "notes/cymkube/Cymkube 戰略規劃藍圖 (2025 Ver.).md",
+      "size": 5146,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "Cymkube 戰略規劃藍圖 (2025 Ver.)",
+      "cjk_ratio": 0.403,
+      "first_line": "",
+      "sha1_8": "604cf7becf80"
+    },
+    {
+      "path": "notes/cymkube/value proposition, 價值主張定位.md",
+      "size": 2562,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "value proposition, 價值主張定位",
+      "cjk_ratio": 0.647,
+      "first_line": "",
+      "sha1_8": "c394ab6d831b"
+    },
+    {
+      "path": "notes/cymkube/cymkube 1月策略.md",
+      "size": 6820,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "cymkube 1月策略",
+      "cjk_ratio": 0.492,
+      "first_line": "",
+      "sha1_8": "c6bd1a79fbce"
+    },
+    {
+      "path": "notes/cymkube/DX Team 月會.md",
+      "size": 3497,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "DX Team 月會",
+      "cjk_ratio": 0.377,
+      "first_line": "",
+      "sha1_8": "5aed8721425e"
+    },
+    {
+      "path": "notes/cymkube/cymkube sdk for page.md",
+      "size": 1775,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "cymkube sdk for page",
+      "cjk_ratio": 0.233,
+      "first_line": "",
+      "sha1_8": "bf66e0629901"
+    },
+    {
+      "path": "notes/cymkube/台灣壓克力客製化市場分析報告.md",
+      "size": 6820,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "台灣壓克力客製化市場分析報告",
+      "cjk_ratio": 0.492,
+      "first_line": "",
+      "sha1_8": "c6bd1a79fbce"
+    },
+    {
+      "path": "notes/cymkube/Cymkube（3D 客製化列印與公仔業務）.md",
+      "size": 6820,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "Cymkube（3D 客製化列印與公仔業務）",
+      "cjk_ratio": 0.492,
+      "first_line": "",
+      "sha1_8": "c6bd1a79fbce"
+    },
+    {
+      "path": "notes/cymkube/DX Team, cymkube.md",
+      "size": 789,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "DX Team, cymkube",
+      "cjk_ratio": 0.529,
+      "first_line": "",
+      "sha1_8": "714a16a08b6d"
+    },
+    {
+      "path": "notes/cymkube/軟包整體規劃.md",
+      "size": 3719,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "軟包整體規劃",
+      "cjk_ratio": 0.523,
+      "first_line": "",
+      "sha1_8": "690d406c1bc5"
+    },
+    {
+      "path": "notes/ai-tooling/AI 簡報工具的真實與想像：一場智慧呈現的革命.md",
+      "size": 9713,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "AI 簡報工具的真實與想像：一場智慧呈現的革命",
+      "cjk_ratio": 0.718,
+      "first_line": "",
+      "sha1_8": "6640a02a47d9"
+    },
+    {
+      "path": "notes/ai-tooling/notebooklm to pdf to text and image.md",
+      "size": 688,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "notebooklm to pdf to text and image",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": "86e1bbc048e5"
+    },
+    {
+      "path": "notes/ai-tooling/Claude Skill 教學.md",
+      "size": 14973,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "Claude Skill 教學",
+      "cjk_ratio": 0.379,
+      "first_line": "",
+      "sha1_8": "2acee1eb6895"
+    },
+    {
+      "path": "notes/ai-tooling/Chandra OCR 本地部署與實測驗證完整指南.md",
+      "size": 7279,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "Chandra OCR 本地部署與實測驗證完整指南",
+      "cjk_ratio": 0.51,
+      "first_line": "",
+      "sha1_8": "e33be994611e"
+    },
+    {
+      "path": "notes/ai-tooling/生成式引擎優AT（GEO）：AI 時代的增長策略與指標.md",
+      "size": 13693,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "生成式引擎優AT（GEO）：AI 時代的增長策略與指標",
+      "cjk_ratio": 0.613,
+      "first_line": "",
+      "sha1_8": "e9446ee5138a"
+    },
+    {
+      "path": "notes/ai-tooling/project_slide_inpaiting for notebookLM 的項目.md",
+      "size": 840,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "project_slide_inpaiting for notebookLM 的項目",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": "a2960d1302bc"
+    },
+    {
+      "path": "notes/ai-tooling/prompt.md",
+      "size": 526,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "prompt",
+      "cjk_ratio": 0.539,
+      "first_line": "",
+      "sha1_8": "94f4722d09d4"
+    },
+    {
+      "path": "notes/ai-tooling/透過沙箱技術讓 Claude Code 更安全自主.md",
+      "size": 7736,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "透過沙箱技術讓 Claude Code 更安全自主",
+      "cjk_ratio": 0.64,
+      "first_line": "",
+      "sha1_8": "248b81de14db"
+    },
+    {
+      "path": "notes/ai-tooling/MBTI template and prompt.md",
+      "size": 5985,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "MBTI template and prompt",
+      "cjk_ratio": 0.036,
+      "first_line": "",
+      "sha1_8": "358bcf8133c2"
+    },
+    {
+      "path": "notes/ai-tooling/Nanobanana pro image generate prompt.md",
+      "size": 16554,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "Nanobanana pro image generate prompt",
+      "cjk_ratio": 0.09,
+      "first_line": "",
+      "sha1_8": "4d50026c44ba"
+    },
+    {
+      "path": "notes/ai-tooling/AI 加速人力資源人才招募完整指南.md",
+      "size": 7279,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "AI 加速人力資源人才招募完整指南",
+      "cjk_ratio": 0.51,
+      "first_line": "",
+      "sha1_8": "e33be994611e"
+    },
+    {
+      "path": "notes/ai-tooling/介紹 Bloom：用於自動化行為評估的開源工具.md",
+      "size": 6648,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "介紹 Bloom：用於自動化行為評估的開源工具",
+      "cjk_ratio": 0.591,
+      "first_line": "",
+      "sha1_8": "55dbc8a2d95b"
+    },
+    {
+      "path": "notes/ai-tooling/agent flow.md",
+      "size": 2189,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "agent flow",
+      "cjk_ratio": 0.667,
+      "first_line": "",
+      "sha1_8": "5cccc0979ce3"
+    },
+    {
+      "path": "notes/ai-tooling/ai partner.md",
+      "size": 678,
+      "ext": ".md",
+      "top_dir": "notes",
+      "title": "ai partner",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": "e579d68a4603"
+    },
+    {
+      "path": "notes/assets/Pasted image 20251209151749.png",
+      "size": 4060505,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251209151749",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251202174251.png",
+      "size": 818340,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251202174251",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251202174237.png",
+      "size": 810364,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251202174237",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20260101010911.png",
+      "size": 1391650,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20260101010911",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251202174156.png",
+      "size": 1043978,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251202174156",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251210114317.png",
+      "size": 3723032,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251210114317",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251204135444.png",
+      "size": 3870015,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251204135444",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251204165528.png",
+      "size": 982264,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251204165528",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251213233130.png",
+      "size": 1776368,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251213233130",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251202174405.png",
+      "size": 879754,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251202174405",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251204165656.png",
+      "size": 3449023,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251204165656",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251202174103.png",
+      "size": 1100347,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251202174103",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251202174114.png",
+      "size": 5552789,
+      "ext": ".png",
+      "top_dir": "notes",
+      "title": "Pasted image 20251202174114",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "notes/assets/Pasted image 20251202181359.png",
       "size": 2421996,
       "ext": ".png",
-      "top_dir": "<root>",
+      "top_dir": "notes",
       "title": "Pasted image 20251202181359",
       "cjk_ratio": 0.0,
       "first_line": "",
       "sha1_8": ""
     },
     {
-      "path": "ai partner.md",
-      "size": 678,
+      "path": "_archive/README.md",
+      "size": 494,
       "ext": ".md",
-      "top_dir": "<root>",
-      "title": "ai partner",
+      "top_dir": "_archive",
+      "title": "README",
+      "cjk_ratio": 0.545,
+      "first_line": "# _archive/ — 歷史筆記封存區",
+      "sha1_8": "7416b03c041f"
+    },
+    {
+      "path": "_archive/trash/未命名.canvas",
+      "size": 2,
+      "ext": ".canvas",
+      "top_dir": "_archive",
+      "title": "未命名",
+      "cjk_ratio": 0.0,
+      "first_line": "{}",
+      "sha1_8": "bf21a9e8fbc5"
+    },
+    {
+      "path": "_archive/trash/未命名.base",
+      "size": 0,
+      "ext": ".base",
+      "top_dir": "_archive",
+      "title": "未命名",
       "cjk_ratio": 0.0,
       "first_line": "",
-      "sha1_8": "e579d68a4603"
+      "sha1_8": ""
+    },
+    {
+      "path": "_archive/tiny/stock analytics.md",
+      "size": 99,
+      "ext": ".md",
+      "top_dir": "_archive",
+      "title": "stock analytics",
+      "cjk_ratio": 0.49,
+      "first_line": "",
+      "sha1_8": "2388b75ab572"
     },
     {
       "path": "caesar_vault/crystal_sticker_quality_control_spec.md",
@@ -1561,6 +1660,16 @@
       "cjk_ratio": 0.069,
       "first_line": "",
       "sha1_8": "c839811e2174"
+    },
+    {
+      "path": "raw/README.md",
+      "size": 821,
+      "ext": ".md",
+      "top_dir": "raw",
+      "title": "README",
+      "cjk_ratio": 0.299,
+      "first_line": "# raw/ — 原始素材區",
+      "sha1_8": "143851895bc9"
     }
   ]
 }

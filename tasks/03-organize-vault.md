@@ -1,4 +1,4 @@
-- [ ] Organize vault — remove empties, categorize, move into folders
+- [x] Organize vault — remove empties, categorize, move into folders
 
 ## Why
 103 .md files are piled at the vault root with no categories. The user wants
