@@ -1,0 +1,29 @@
+# Node / Obsidian plugin
+node_modules/
+plugin/main.js
+plugin/main.js.map
+plugin/dist/
+plugin/.obsidian-build-cache/
+
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Local env / secrets
+.env
+.env.*
+!.env.example
+
+# Tool output (audit reports are committed; caches are not)
+tools/**/__cache__/
