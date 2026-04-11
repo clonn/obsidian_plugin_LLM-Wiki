@@ -1,0 +1,1566 @@
+{
+  "audit": {
+    "vault": "/Users/caesarchi/Dropbox/caesar_obsidian",
+    "total_files": 142,
+    "total_bytes": 42693487,
+    "by_ext": {
+      ".png": 32,
+      ".md": 103,
+      ".txt": 1,
+      "": 2,
+      ".canvas": 2,
+      ".base": 1,
+      ".html": 1
+    },
+    "by_top_dir": {
+      "<root>": 61,
+      "caesar_vault": 81
+    },
+    "md_count": 103,
+    "image_count": 32,
+    "empty_md": [],
+    "tiny_md": [
+      "stock analytics.md",
+      "caesar_vault/cympotek/cympack prompt.md"
+    ],
+    "largest_files": [
+      [
+        "Pasted image 20251202174114.png",
+        5552789
+      ],
+      [
+        "Pasted image 20251209151749.png",
+        4060505
+      ],
+      [
+        "Pasted image 20251204135444.png",
+        3870015
+      ],
+      [
+        "Pasted image 20251210114317.png",
+        3723032
+      ],
+      [
+        "Pasted image 20251204165656.png",
+        3449023
+      ],
+      [
+        "caesar_vault/Pasted image 20250819125516.png",
+        2497279
+      ],
+      [
+        "Pasted image 20251202181359.png",
+        2421996
+      ],
+      [
+        "Pasted image 20251213233130.png",
+        1776368
+      ],
+      [
+        "Pasted image 20260101010911.png",
+        1391650
+      ],
+      [
+        "caesar_vault/Pasted image 20250818220412.png",
+        1242143
+      ],
+      [
+        "Pasted image 20251202174103.png",
+        1100347
+      ],
+      [
+        "Pasted image 20251202174156.png",
+        1043978
+      ],
+      [
+        "Pasted image 20251204165528.png",
+        982264
+      ],
+      [
+        "Pasted image 20251202174405.png",
+        879754
+      ],
+      [
+        "Pasted image 20251202174251.png",
+        818340
+      ],
+      [
+        "caesar_vault/Pasted image 20250818220425.png",
+        815518
+      ],
+      [
+        "Pasted image 20251202174237.png",
+        810364
+      ],
+      [
+        "caesar_vault/Pasted image 20250818220339.png",
+        782611
+      ],
+      [
+        "caesar_vault/Pasted image 20250818220450.png",
+        537025
+      ],
+      [
+        "caesar_vault/Pasted image 20250630101814.png",
+        465547
+      ]
+    ],
+    "suspected_duplicates_by_title": {
+      "台灣政府七月底最新統計資料綜合分析報告": [
+        "caesar_vault/台灣政府七月底最新統計資料綜合分析報告.md",
+        "caesar_vault/blog/台灣政府七月底最新統計資料綜合分析報告.md"
+      ]
+    },
+    "suspected_duplicates_by_hash": {
+      "604cf7becf80": [
+        "Cymkube 戰略規劃藍圖 (2025 Ver.).md",
+        "傳討企業自動化問題及Agen協作模式.md"
+      ],
+      "c6bd1a79fbce": [
+        "cymkube 1月策略.md",
+        "台灣壓克力客製化市場分析報告.md",
+        "**Cymkube（3D 客製化列印與公仔業務）**.md"
+      ],
+      "e33be994611e": [
+        "Chandra OCR 本地部署與實測驗證完整指南.md",
+        "AI 加速人力資源人才招募完整指南.md"
+      ],
+      "4f8218e8e0cc": [
+        "caesar_vault/Untitled.md",
+        "caesar_vault/軟體新玩法不談功能、不看工時，只看「創造多少價值」.md"
+      ],
+      "3b0627d750a7": [
+        "caesar_vault/blog/AI 程式碼生成與工程概要.md",
+        "caesar_vault/blog/從副駕駛到飛行員：AI 程式碼生成與提示工程完整指南.md"
+      ],
+      "9b8e68fe40fc": [
+        "caesar_vault/blog/台灣政府七月底最新統計資料綜合分析報告.md",
+        "caesar_vault/blog/八月新局面，美國全球關稅政策深度衝擊，全球貿易體系迎來新變局.md"
+      ]
+    },
+    "cjk_md_count": 85,
+    "top_level_md_at_root": 43
+  },
+  "records": [
+    {
+      "path": "Pasted image 20251209151749.png",
+      "size": 4060505,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251209151749",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "cymkube 三月份.md",
+      "size": 2206,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "cymkube 三月份",
+      "cjk_ratio": 0.111,
+      "first_line": "",
+      "sha1_8": "af44a28c119e"
+    },
+    {
+      "path": "永豐&藍新交易資料.md",
+      "size": 209,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "永豐&藍新交易資料",
+      "cjk_ratio": 0.03,
+      "first_line": "",
+      "sha1_8": "7cbcf08e04cf"
+    },
+    {
+      "path": "Cymkube.md",
+      "size": 2615,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "Cymkube",
+      "cjk_ratio": 0.631,
+      "first_line": "",
+      "sha1_8": "8e0f3406bea8"
+    },
+    {
+      "path": "OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來.md",
+      "size": 52959,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來",
+      "cjk_ratio": 0.631,
+      "first_line": "![[記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅.txt]]",
+      "sha1_8": "21555abeb225"
+    },
+    {
+      "path": "正美零售與通路模式.md",
+      "size": 2869,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "正美零售與通路模式",
+      "cjk_ratio": 0.456,
+      "first_line": "",
+      "sha1_8": "e4f6426ff4de"
+    },
+    {
+      "path": "AI 簡報工具的真實與想像：一場智慧呈現的革命.md",
+      "size": 9713,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "AI 簡報工具的真實與想像：一場智慧呈現的革命",
+      "cjk_ratio": 0.718,
+      "first_line": "",
+      "sha1_8": "6640a02a47d9"
+    },
+    {
+      "path": "stock analytics.md",
+      "size": 99,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "stock analytics",
+      "cjk_ratio": 0.49,
+      "first_line": "",
+      "sha1_8": "2388b75ab572"
+    },
+    {
+      "path": "記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅.txt",
+      "size": 25453,
+      "ext": ".txt",
+      "top_dir": "<root>",
+      "title": "記錄 - 錄音：數位關鍵字_戚務漢_我的養蝦之旅",
+      "cjk_ratio": 0.581,
+      "first_line": "﻿數位關鍵字｜OpenClaw 龍蝦現象：全民養蝦運動的技術真相、資安風險與 AI Agent 未來",
+      "sha1_8": "538ec8c9f118"
+    },
+    {
+      "path": "1人公司戶政事務所.md",
+      "size": 6073,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "1人公司戶政事務所",
+      "cjk_ratio": 0.514,
+      "first_line": "",
+      "sha1_8": "ea917eedefbf"
+    },
+    {
+      "path": "Cymkube 戰略規劃藍圖 (2025 Ver.).md",
+      "size": 5146,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "Cymkube 戰略規劃藍圖 (2025 Ver.)",
+      "cjk_ratio": 0.403,
+      "first_line": "",
+      "sha1_8": "604cf7becf80"
+    },
+    {
+      "path": ".DS_Store",
+      "size": 6148,
+      "ext": "",
+      "top_dir": "<root>",
+      "title": ".DS_Store",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "許願.md",
+      "size": 1520,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "許願",
+      "cjk_ratio": 0.856,
+      "first_line": "你好 Tom,",
+      "sha1_8": "07d7b76d069e"
+    },
+    {
+      "path": "何大資訊.md",
+      "size": 2805,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "何大資訊",
+      "cjk_ratio": 0.304,
+      "first_line": "",
+      "sha1_8": "4f80d756f6ea"
+    },
+    {
+      "path": "共生型企業作業系統-草稿 draft.md",
+      "size": 5569,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "共生型企業作業系統-草稿 draft",
+      "cjk_ratio": 0.385,
+      "first_line": "",
+      "sha1_8": "01688c8e18e7"
+    },
+    {
+      "path": "notebooklm to pdf to text and image.md",
+      "size": 688,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "notebooklm to pdf to text and image",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": "86e1bbc048e5"
+    },
+    {
+      "path": "Pasted image 20251202174251.png",
+      "size": 818340,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251202174251",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "value proposition, 價值主張定位.md",
+      "size": 2562,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "value proposition, 價值主張定位",
+      "cjk_ratio": 0.647,
+      "first_line": "",
+      "sha1_8": "c394ab6d831b"
+    },
+    {
+      "path": "API KEY.md",
+      "size": 2353,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "API KEY",
+      "cjk_ratio": 0.024,
+      "first_line": "",
+      "sha1_8": "391e65491301"
+    },
+    {
+      "path": "Claude Skill 教學.md",
+      "size": 14973,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "Claude Skill 教學",
+      "cjk_ratio": 0.379,
+      "first_line": "",
+      "sha1_8": "2acee1eb6895"
+    },
+    {
+      "path": "cymkube 1月策略.md",
+      "size": 6820,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "cymkube 1月策略",
+      "cjk_ratio": 0.492,
+      "first_line": "",
+      "sha1_8": "c6bd1a79fbce"
+    },
+    {
+      "path": "Pasted image 20251202174237.png",
+      "size": 810364,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251202174237",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "Chandra OCR 本地部署與實測驗證完整指南.md",
+      "size": 7279,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "Chandra OCR 本地部署與實測驗證完整指南",
+      "cjk_ratio": 0.51,
+      "first_line": "",
+      "sha1_8": "e33be994611e"
+    },
+    {
+      "path": "生成式引擎優AT（GEO）：AI 時代的增長策略與指標.md",
+      "size": 13693,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "生成式引擎優AT（GEO）：AI 時代的增長策略與指標",
+      "cjk_ratio": 0.613,
+      "first_line": "",
+      "sha1_8": "e9446ee5138a"
+    },
+    {
+      "path": "Pasted image 20260101010911.png",
+      "size": 1391650,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20260101010911",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "未命名.canvas",
+      "size": 2,
+      "ext": ".canvas",
+      "top_dir": "<root>",
+      "title": "未命名",
+      "cjk_ratio": 0.0,
+      "first_line": "{}",
+      "sha1_8": "bf21a9e8fbc5"
+    },
+    {
+      "path": "DX Team 月會.md",
+      "size": 3497,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "DX Team 月會",
+      "cjk_ratio": 0.377,
+      "first_line": "",
+      "sha1_8": "5aed8721425e"
+    },
+    {
+      "path": "cymkube sdk for page.md",
+      "size": 1775,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "cymkube sdk for page",
+      "cjk_ratio": 0.233,
+      "first_line": "",
+      "sha1_8": "bf66e0629901"
+    },
+    {
+      "path": "Pasted image 20251202174156.png",
+      "size": 1043978,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251202174156",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "Pasted image 20251210114317.png",
+      "size": 3723032,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251210114317",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "sowork staging.md",
+      "size": 1775,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "sowork staging",
+      "cjk_ratio": 0.037,
+      "first_line": "",
+      "sha1_8": "c9766a1153eb"
+    },
+    {
+      "path": "台灣壓克力客製化市場分析報告.md",
+      "size": 6820,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "台灣壓克力客製化市場分析報告",
+      "cjk_ratio": 0.492,
+      "first_line": "",
+      "sha1_8": "c6bd1a79fbce"
+    },
+    {
+      "path": "openclaw muliti user session data.md",
+      "size": 16186,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "openclaw muliti user session data",
+      "cjk_ratio": 0.63,
+      "first_line": "",
+      "sha1_8": "3e0aba5b1601"
+    },
+    {
+      "path": "blog - ai 目前短暫結論.md",
+      "size": 4228,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "blog - ai 目前短暫結論",
+      "cjk_ratio": 0.734,
+      "first_line": "",
+      "sha1_8": "4f61e4086e89"
+    },
+    {
+      "path": "Pasted image 20251204135444.png",
+      "size": 3870015,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251204135444",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "project_slide_inpaiting for notebookLM 的項目.md",
+      "size": 840,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "project_slide_inpaiting for notebookLM 的項目",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": "a2960d1302bc"
+    },
+    {
+      "path": "prompt.md",
+      "size": 526,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "prompt",
+      "cjk_ratio": 0.539,
+      "first_line": "",
+      "sha1_8": "94f4722d09d4"
+    },
+    {
+      "path": "MBTI template and prompt.md",
+      "size": 5985,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "MBTI template and prompt",
+      "cjk_ratio": 0.036,
+      "first_line": "",
+      "sha1_8": "358bcf8133c2"
+    },
+    {
+      "path": "Pasted image 20251204165528.png",
+      "size": 982264,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251204165528",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "Pasted image 20251213233130.png",
+      "size": 1776368,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251213233130",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "OpenClaw 造成一股熱潮，對於商業上是什麼意義？.md",
+      "size": 2761,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "OpenClaw 造成一股熱潮，對於商業上是什麼意義？",
+      "cjk_ratio": 0.688,
+      "first_line": "",
+      "sha1_8": "098fff6e1ee6"
+    },
+    {
+      "path": "Azure VM Server.md",
+      "size": 1994,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "Azure VM Server",
+      "cjk_ratio": 0.125,
+      "first_line": "",
+      "sha1_8": "58f99d0c3805"
+    },
+    {
+      "path": "Nanobanana pro image generate prompt.md",
+      "size": 16554,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "Nanobanana pro image generate prompt",
+      "cjk_ratio": 0.09,
+      "first_line": "",
+      "sha1_8": "4d50026c44ba"
+    },
+    {
+      "path": "Pasted image 20251202174405.png",
+      "size": 879754,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251202174405",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "DX Team, cymkube.md",
+      "size": 789,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "DX Team, cymkube",
+      "cjk_ratio": 0.529,
+      "first_line": "",
+      "sha1_8": "714a16a08b6d"
+    },
+    {
+      "path": "**Cymkube（3D 客製化列印與公仔業務）**.md",
+      "size": 6820,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "**Cymkube（3D 客製化列印與公仔業務）**",
+      "cjk_ratio": 0.492,
+      "first_line": "",
+      "sha1_8": "c6bd1a79fbce"
+    },
+    {
+      "path": "AI 加速人力資源人才招募完整指南.md",
+      "size": 7279,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "AI 加速人力資源人才招募完整指南",
+      "cjk_ratio": 0.51,
+      "first_line": "",
+      "sha1_8": "e33be994611e"
+    },
+    {
+      "path": "功能模組完整介紹-sowork.md",
+      "size": 115371,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "功能模組完整介紹-sowork",
+      "cjk_ratio": 0.531,
+      "first_line": "",
+      "sha1_8": "f3785cb6d9cf"
+    },
+    {
+      "path": "**透過沙箱技術讓 Claude Code 更安全自主**.md",
+      "size": 7736,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "**透過沙箱技術讓 Claude Code 更安全自主**",
+      "cjk_ratio": 0.64,
+      "first_line": "",
+      "sha1_8": "248b81de14db"
+    },
+    {
+      "path": "Pasted image 20251204165656.png",
+      "size": 3449023,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251204165656",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "blog -This is a short conclusion as of February 2026..md",
+      "size": 4533,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "blog -This is a short conclusion as of February 2026.",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": "a63bfa0b0edc"
+    },
+    {
+      "path": "介紹 Bloom：用於自動化行為評估的開源工具.md",
+      "size": 6648,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "介紹 Bloom：用於自動化行為評估的開源工具",
+      "cjk_ratio": 0.591,
+      "first_line": "",
+      "sha1_8": "55dbc8a2d95b"
+    },
+    {
+      "path": "未命名.base",
+      "size": 0,
+      "ext": ".base",
+      "top_dir": "<root>",
+      "title": "未命名",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "openclaw vm and deploy version.md",
+      "size": 4872,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "openclaw vm and deploy version",
+      "cjk_ratio": 0.052,
+      "first_line": "",
+      "sha1_8": "1a6ecf095eb4"
+    },
+    {
+      "path": "Pasted image 20251202174103.png",
+      "size": 1100347,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251202174103",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "Pasted image 20251202174114.png",
+      "size": 5552789,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251202174114",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "軟包整體規劃.md",
+      "size": 3719,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "軟包整體規劃",
+      "cjk_ratio": 0.523,
+      "first_line": "",
+      "sha1_8": "690d406c1bc5"
+    },
+    {
+      "path": "agent flow.md",
+      "size": 2189,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "agent flow",
+      "cjk_ratio": 0.667,
+      "first_line": "",
+      "sha1_8": "5cccc0979ce3"
+    },
+    {
+      "path": "傳討企業自動化問題及Agen協作模式.md",
+      "size": 5146,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "傳討企業自動化問題及Agen協作模式",
+      "cjk_ratio": 0.403,
+      "first_line": "",
+      "sha1_8": "604cf7becf80"
+    },
+    {
+      "path": "Pasted image 20251202181359.png",
+      "size": 2421996,
+      "ext": ".png",
+      "top_dir": "<root>",
+      "title": "Pasted image 20251202181359",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "ai partner.md",
+      "size": 678,
+      "ext": ".md",
+      "top_dir": "<root>",
+      "title": "ai partner",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": "e579d68a4603"
+    },
+    {
+      "path": "caesar_vault/crystal_sticker_quality_control_spec.md",
+      "size": 8714,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "crystal_sticker_quality_control_spec",
+      "cjk_ratio": 0.588,
+      "first_line": "# 水晶貼紙製造規格內容",
+      "sha1_8": "dcf6cf246868"
+    },
+    {
+      "path": "caesar_vault/為什麼顏色每次印出來都不一樣？從傳統追色到現代色彩管理.md",
+      "size": 25987,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "為什麼顏色每次印出來都不一樣？從傳統追色到現代色彩管理",
+      "cjk_ratio": 0.751,
+      "first_line": "",
+      "sha1_8": "16e1d94544b5"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250818220412.png",
+      "size": 1242143,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250818220412",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/game-developer.md",
+      "size": 2019,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "game-developer",
+      "cjk_ratio": 0.0,
+      "first_line": "---",
+      "sha1_8": "f5812c471883"
+    },
+    {
+      "path": "caesar_vault/Meta Ray-Ban Display 智慧眼鏡：製造業驗收流程的數位化契機.md",
+      "size": 3397,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Meta Ray-Ban Display 智慧眼鏡：製造業驗收流程的數位化契機",
+      "cjk_ratio": 0.664,
+      "first_line": "",
+      "sha1_8": "184be5ae06ed"
+    },
+    {
+      "path": "caesar_vault/.DS_Store",
+      "size": 6148,
+      "ext": "",
+      "top_dir": "caesar_vault",
+      "title": ".DS_Store",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250719201025.png",
+      "size": 247507,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250719201025",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/「牙驛通」遠距牙醫預約與病歷管理系統.md",
+      "size": 140103,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "「牙驛通」遠距牙醫預約與病歷管理系統",
+      "cjk_ratio": 0.604,
+      "first_line": "## **「牙驛通」遠距牙醫預約與病歷管理系統**",
+      "sha1_8": "61889614fb0f"
+    },
+    {
+      "path": "caesar_vault/nvm-node-installation-guide.md",
+      "size": 890,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "nvm-node-installation-guide",
+      "cjk_ratio": 0.275,
+      "first_line": "# NVM Node.js 安裝指南",
+      "sha1_8": "104319c4fe65"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250818220339.png",
+      "size": 782611,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250818220339",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Untitled.md",
+      "size": 8683,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Untitled",
+      "cjk_ratio": 0.007,
+      "first_line": "# Threads 成長趨勢完整分析：從全球現象到台灣奇蹟",
+      "sha1_8": "4f8218e8e0cc"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250819125516.png",
+      "size": 2497279,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250819125516",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/nodejs-installation-guide.md",
+      "size": 2149,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "nodejs-installation-guide",
+      "cjk_ratio": 0.265,
+      "first_line": "# RHEL 8.4 Node.js 20.9.0 手動安裝指南",
+      "sha1_8": "667225bd0471"
+    },
+    {
+      "path": "caesar_vault/Vue3_Build_Debug_錯誤排除_fontech_20241108.md",
+      "size": 1662,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Vue3_Build_Debug_錯誤排除_fontech_20241108",
+      "cjk_ratio": 0.321,
+      "first_line": "",
+      "sha1_8": "875d198aa236"
+    },
+    {
+      "path": "caesar_vault/深入解析 Claude Code Hooks：自動化與安全的最佳實踐.md",
+      "size": 5248,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "深入解析 Claude Code Hooks：自動化與安全的最佳實踐",
+      "cjk_ratio": 0.294,
+      "first_line": "# Claude Code Hooks：自動化與安全的最佳實踐",
+      "sha1_8": "f04edfb29ec3"
+    },
+    {
+      "path": "caesar_vault/與 AI 對話的藝術：從新手到高手的 Prompt 指南.md",
+      "size": 13312,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "與 AI 對話的藝術：從新手到高手的 Prompt 指南",
+      "cjk_ratio": 0.462,
+      "first_line": "",
+      "sha1_8": "a1cac3fc4ce4"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250819133011.png",
+      "size": 336415,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250819133011",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Welcome.md",
+      "size": 203,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Welcome",
+      "cjk_ratio": 0.0,
+      "first_line": "This is your new *vault*.",
+      "sha1_8": "9512b4cacf24"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250719200833.png",
+      "size": 165498,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250719200833",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250630102225.png",
+      "size": 340178,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250630102225",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/podcast 產生器.md",
+      "size": 259,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "podcast 產生器",
+      "cjk_ratio": 0.804,
+      "first_line": "採用 podcast 的介紹形式來說明",
+      "sha1_8": "dabd59efb5f3"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250819130321.png",
+      "size": 420426,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250819130321",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250719201051.png",
+      "size": 145351,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250719201051",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250719200814.png",
+      "size": 301196,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250719200814",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/build_前端設定與環境配置指南_20241016.md",
+      "size": 2966,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "build_前端設定與環境配置指南_20241016",
+      "cjk_ratio": 0.308,
+      "first_line": "# 前端設定與環境配置指南",
+      "sha1_8": "074f8ff0dda5"
+    },
+    {
+      "path": "caesar_vault/AP2：跨境製造業的未來支付藍圖.md",
+      "size": 4228,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "AP2：跨境製造業的未來支付藍圖",
+      "cjk_ratio": 0.493,
+      "first_line": "",
+      "sha1_8": "0f960fa01e18"
+    },
+    {
+      "path": "caesar_vault/Oracle AI浪潮引爆市場3000億美元合約揭示雲端新巨頭的崛起.md",
+      "size": 3267,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Oracle AI浪潮引爆市場3000億美元合約揭示雲端新巨頭的崛起",
+      "cjk_ratio": 0.693,
+      "first_line": "",
+      "sha1_8": "e19bb0535f4e"
+    },
+    {
+      "path": "caesar_vault/軟體新玩法不談功能、不看工時，只看「創造多少價值」.md",
+      "size": 8683,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "軟體新玩法不談功能、不看工時，只看「創造多少價值」",
+      "cjk_ratio": 0.007,
+      "first_line": "# Threads 成長趨勢完整分析：從全球現象到台灣奇蹟",
+      "sha1_8": "4f8218e8e0cc"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250630102214.png",
+      "size": 449667,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250630102214",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250819123421.png",
+      "size": 172611,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250819123421",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250818220450.png",
+      "size": 537025,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250818220450",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/全球主流 AI 服务用途与代表性工具（2025年版）.md",
+      "size": 4329,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "全球主流 AI 服务用途与代表性工具（2025年版）",
+      "cjk_ratio": 0.164,
+      "first_line": "<img src=\"https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png\" class=\"logo\" width=\"120\"/>",
+      "sha1_8": "3a8b28dc81de"
+    },
+    {
+      "path": "caesar_vault/Prompting 下的好，AI 回應沒煩惱.md",
+      "size": 10090,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Prompting 下的好，AI 回應沒煩惱",
+      "cjk_ratio": 0.37,
+      "first_line": "",
+      "sha1_8": "700958616fa4"
+    },
+    {
+      "path": "caesar_vault/Claude Code Mastering Output Styles.md",
+      "size": 8412,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Claude Code Mastering Output Styles",
+      "cjk_ratio": 0.412,
+      "first_line": "",
+      "sha1_8": "0802026c37fb"
+    },
+    {
+      "path": "caesar_vault/蘋果的越南豪賭：用一個「不存在的產品」，解開中美地緣政治的死結.md",
+      "size": 7619,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "蘋果的越南豪賭：用一個「不存在的產品」，解開中美地緣政治的死結",
+      "cjk_ratio": 0.784,
+      "first_line": "",
+      "sha1_8": "44d3da9b937c"
+    },
+    {
+      "path": "caesar_vault/從「盲抽」到 2.3 億播放：PJ Ace 如何用 AI 影片，把爆款廣告變成「可複製的工程活」？.md",
+      "size": 6922,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "從「盲抽」到 2.3 億播放：PJ Ace 如何用 AI 影片，把爆款廣告變成「可複製的工程活」？",
+      "cjk_ratio": 0.689,
+      "first_line": "",
+      "sha1_8": "c64393bddc27"
+    },
+    {
+      "path": "caesar_vault/Frontend.md",
+      "size": 2611,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Frontend",
+      "cjk_ratio": 0.381,
+      "first_line": "### **📢 我們正在招募｜**",
+      "sha1_8": "c45e531c8a70"
+    },
+    {
+      "path": "caesar_vault/Data Engineer.md",
+      "size": 3403,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Data Engineer",
+      "cjk_ratio": 0.349,
+      "first_line": "### **📢 招募中｜**",
+      "sha1_8": "6ca055e876ec"
+    },
+    {
+      "path": "caesar_vault/台灣政府七月底最新統計資料綜合分析報告.md",
+      "size": 12636,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "台灣政府七月底最新統計資料綜合分析報告",
+      "cjk_ratio": 0.539,
+      "first_line": "<img src=\"https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png\" class=\"logo\" width=\"120\"/>",
+      "sha1_8": "304af505fd8b"
+    },
+    {
+      "path": "caesar_vault/AI如何識別貓？圖解指南。.md",
+      "size": 11452,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "AI如何識別貓？圖解指南。",
+      "cjk_ratio": 0.574,
+      "first_line": "",
+      "sha1_8": "941b466f8fed"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250818220437.png",
+      "size": 355802,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250818220437",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250630101814.png",
+      "size": 465547,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250630101814",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250630101828.png",
+      "size": 465547,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250630101828",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Threads 成長趨勢完整分析：從全球現象到台灣奇蹟.md",
+      "size": 14821,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Threads 成長趨勢完整分析：從全球現象到台灣奇蹟",
+      "cjk_ratio": 0.53,
+      "first_line": "",
+      "sha1_8": "5b15ebc903c0"
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250719200913.png",
+      "size": 51242,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250719200913",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/Pasted image 20250818220425.png",
+      "size": 815518,
+      "ext": ".png",
+      "top_dir": "caesar_vault",
+      "title": "Pasted image 20250818220425",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/cympotek/法務拍攝內容.md",
+      "size": 341,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "法務拍攝內容",
+      "cjk_ratio": 0.572,
+      "first_line": "",
+      "sha1_8": "33dc451200d9"
+    },
+    {
+      "path": "caesar_vault/cympotek/寶寶市場與銷售提升專案提案.md",
+      "size": 12498,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "寶寶市場與銷售提升專案提案",
+      "cjk_ratio": 0.5,
+      "first_line": "# 遠景公司：寶寶市場與銷售提升專案提案",
+      "sha1_8": "75f83b617e3e"
+    },
+    {
+      "path": "caesar_vault/cympotek/寶寶市場互動網頁提案.html",
+      "size": 56471,
+      "ext": ".html",
+      "top_dir": "caesar_vault",
+      "title": "寶寶市場互動網頁提案",
+      "cjk_ratio": 0.0,
+      "first_line": "",
+      "sha1_8": ""
+    },
+    {
+      "path": "caesar_vault/cympotek/Cympack 思考流程.md",
+      "size": 527,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Cympack 思考流程",
+      "cjk_ratio": 0.166,
+      "first_line": "",
+      "sha1_8": "34f41a571cd8"
+    },
+    {
+      "path": "caesar_vault/cympotek/person_keys.md",
+      "size": 1264,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "person_keys",
+      "cjk_ratio": 0.006,
+      "first_line": "",
+      "sha1_8": "c99e77be57c9"
+    },
+    {
+      "path": "caesar_vault/cympotek/company.md",
+      "size": 2016,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "company",
+      "cjk_ratio": 0.539,
+      "first_line": "\"為大中華地區規模最大專業包材標籤大廠正美集團的子公司，而信集界是集團下新創的數位公司，目標是從印刷加值的角度，研發以數位平台為基礎的全新商業模式，協助品牌客戶來管理並製造銷售產品所需的包裝材料，並延伸至禮贈品週邊乃至產品組件採購。",
+      "sha1_8": "368d8b701a84"
+    },
+    {
+      "path": "caesar_vault/cympotek/cympack prompt.md",
+      "size": 141,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "cympack prompt",
+      "cjk_ratio": 0.804,
+      "first_line": "除非必要，不然避免詢問預算",
+      "sha1_8": "a9d13a8c8a32"
+    },
+    {
+      "path": "caesar_vault/cympotek/遠景公司合作提案分析報告.md",
+      "size": 9428,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "遠景公司合作提案分析報告",
+      "cjk_ratio": 0.526,
+      "first_line": "# 遠景海洋企業 × 信集界科技 合作提案分析報告",
+      "sha1_8": "94334883bfcb"
+    },
+    {
+      "path": "caesar_vault/cympotek/廠商提供資訊/遠景/製作過商品內容.md",
+      "size": 373,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "製作過商品內容",
+      "cjk_ratio": 0.277,
+      "first_line": "",
+      "sha1_8": "4786c4eee2e2"
+    },
+    {
+      "path": "caesar_vault/cympotek/supplierchain/路跑需求.md",
+      "size": 584,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "路跑需求",
+      "cjk_ratio": 0.171,
+      "first_line": "",
+      "sha1_8": "17b395b96ac0"
+    },
+    {
+      "path": "caesar_vault/cympotek/財報分析表/prompt 分析.md",
+      "size": 215,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "prompt 分析",
+      "cjk_ratio": 0.704,
+      "first_line": "進行每個月，根據每個月分類，彙整，總金額，總採用數量，廠商名稱",
+      "sha1_8": "c078490b9f4d"
+    },
+    {
+      "path": "caesar_vault/blog/拓竹如何從3D打印機市場脫穎而出.md",
+      "size": 8835,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "拓竹如何從3D打印機市場脫穎而出",
+      "cjk_ratio": 0.319,
+      "first_line": "",
+      "sha1_8": "ba78806cf2aa"
+    },
+    {
+      "path": "caesar_vault/blog/Vibe Coding：到底氛圍驅動程式開發必殺技.md",
+      "size": 8919,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Vibe Coding：到底氛圍驅動程式開發必殺技",
+      "cjk_ratio": 0.554,
+      "first_line": "",
+      "sha1_8": "a9e4e9a97bc2"
+    },
+    {
+      "path": "caesar_vault/blog/Untitled.canvas",
+      "size": 2,
+      "ext": ".canvas",
+      "top_dir": "caesar_vault",
+      "title": "Untitled",
+      "cjk_ratio": 0.0,
+      "first_line": "{}",
+      "sha1_8": "bf21a9e8fbc5"
+    },
+    {
+      "path": "caesar_vault/blog/在AI創業黃金時代，如何實踐吳恩達的速度策略？.md",
+      "size": 6834,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "在AI創業黃金時代，如何實踐吳恩達的速度策略？",
+      "cjk_ratio": 0.591,
+      "first_line": "# 在AI創業黃金時代，如何實踐吳恩達的速度策略？",
+      "sha1_8": "dc32aa95ee2f"
+    },
+    {
+      "path": "caesar_vault/blog/AI 程式碼生成與工程概要.md",
+      "size": 12182,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "AI 程式碼生成與工程概要",
+      "cjk_ratio": 0.506,
+      "first_line": "整理一下與總結重點介紹在軟體開發中使用 AI 程式碼生成和提示工程的主要主題、重要概念和實用建議。",
+      "sha1_8": "3b0627d750a7"
+    },
+    {
+      "path": "caesar_vault/blog/AI時代的工作革命：從假工作到超級個體.md",
+      "size": 16028,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "AI時代的工作革命：從假工作到超級個體",
+      "cjk_ratio": 0.78,
+      "first_line": "# AI時代的工作革命：從工作到超級個體",
+      "sha1_8": "b8aaf3c84e23"
+    },
+    {
+      "path": "caesar_vault/blog/上下文工程與長上下文提示：引領大型語言模型的智慧未來.md",
+      "size": 7851,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "上下文工程與長上下文提示：引領大型語言模型的智慧未來",
+      "cjk_ratio": 0.66,
+      "first_line": "# 上下文工程與長上下文提示：引領大型語言模型的智慧未來",
+      "sha1_8": "218346f62409"
+    },
+    {
+      "path": "caesar_vault/blog/真實智慧的崛起：在AI時代培育終身學習與以人為本的核心能力.md",
+      "size": 32865,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "真實智慧的崛起：在AI時代培育終身學習與以人為本的核心能力",
+      "cjk_ratio": 0.677,
+      "first_line": "",
+      "sha1_8": "28360441c0cb"
+    },
+    {
+      "path": "caesar_vault/blog/使用人工智慧工具進行軟體專案開發有哪些實用策略？.md",
+      "size": 10148,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "使用人工智慧工具進行軟體專案開發有哪些實用策略？",
+      "cjk_ratio": 0.573,
+      "first_line": "",
+      "sha1_8": "d89ecef8c51f"
+    },
+    {
+      "path": "caesar_vault/blog/行銷的未來式用 Vibe Marketing 打造你的 247 全自動增長引擎.md",
+      "size": 18485,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "行銷的未來式用 Vibe Marketing 打造你的 247 全自動增長引擎",
+      "cjk_ratio": 0.577,
+      "first_line": "# Vibe Markting & Production",
+      "sha1_8": "505d85b48b09"
+    },
+    {
+      "path": "caesar_vault/blog/解密AI創業成功法則：吳恩達親授「速度為王」的實踐指南.md",
+      "size": 6328,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "解密AI創業成功法則：吳恩達親授「速度為王」的實踐指南",
+      "cjk_ratio": 0.751,
+      "first_line": "",
+      "sha1_8": "b32f9092b4b6"
+    },
+    {
+      "path": "caesar_vault/blog/AI時代必備的未來能力：為下一代做好準備.md",
+      "size": 19838,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "AI時代必備的未來能力：為下一代做好準備",
+      "cjk_ratio": 0.514,
+      "first_line": "在這場變革中，我們無法預測孩子未來會面對什麼樣的工作，但能確定的是——唯有具備這些能力，他們才能在AI時代中閃閃發光。",
+      "sha1_8": "027044dbfcc9"
+    },
+    {
+      "path": "caesar_vault/blog/Wechaty 對話式 RPA SDK：從零開始建構聊天機器人完整指南.md",
+      "size": 17889,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Wechaty 對話式 RPA SDK：從零開始建構聊天機器人完整指南",
+      "cjk_ratio": 0.444,
+      "first_line": "# Wechaty 對話式 RPA SDK：從零開始建構聊天機器人完整指南",
+      "sha1_8": "dc972bbd3f5c"
+    },
+    {
+      "path": "caesar_vault/blog/Claude Code Hooks：自動化與安全的最佳實踐.md",
+      "size": 5192,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Claude Code Hooks：自動化與安全的最佳實踐",
+      "cjk_ratio": 0.297,
+      "first_line": "",
+      "sha1_8": "77861993666a"
+    },
+    {
+      "path": "caesar_vault/blog/台灣政府七月底最新統計資料綜合分析報告.md",
+      "size": 4490,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "台灣政府七月底最新統計資料綜合分析報告",
+      "cjk_ratio": 0.773,
+      "first_line": "",
+      "sha1_8": "9b8e68fe40fc"
+    },
+    {
+      "path": "caesar_vault/blog/八月新局面，美國全球關稅政策深度衝擊，全球貿易體系迎來新變局.md",
+      "size": 4490,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "八月新局面，美國全球關稅政策深度衝擊，全球貿易體系迎來新變局",
+      "cjk_ratio": 0.773,
+      "first_line": "",
+      "sha1_8": "9b8e68fe40fc"
+    },
+    {
+      "path": "caesar_vault/blog/AI Agent 全面解析：市場爆發、技術巨頭與未來展望.md",
+      "size": 6415,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "AI Agent 全面解析：市場爆發、技術巨頭與未來展望",
+      "cjk_ratio": 0.285,
+      "first_line": "",
+      "sha1_8": "4483aa55d946"
+    },
+    {
+      "path": "caesar_vault/blog/從副駕駛到飛行員：AI 程式碼生成與提示工程完整指南.md",
+      "size": 12182,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "從副駕駛到飛行員：AI 程式碼生成與提示工程完整指南",
+      "cjk_ratio": 0.506,
+      "first_line": "整理一下與總結重點介紹在軟體開發中使用 AI 程式碼生成和提示工程的主要主題、重要概念和實用建議。",
+      "sha1_8": "3b0627d750a7"
+    },
+    {
+      "path": "caesar_vault/blog/marketing/Vibe Marketing 是什麼？.md",
+      "size": 390,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Vibe Marketing 是什麼？",
+      "cjk_ratio": 0.471,
+      "first_line": "別再錯過 AI 行銷的浪潮！全揭露讓你了解如何運用 AI 工具，打造全自動化流程，了解行銷的「不公平優勢」！從自動化內容、AI 銷售到社群運作流程，所有秘訣一次公開！Vibe Marketing 不囉唆，行銷人建議必看，清洗一下自己的腦袋，領先競爭對手👉https://blog.caesar-chi.com/2025/07/vibe-marketing-247.html",
+      "sha1_8": "c12c7ee7077f"
+    },
+    {
+      "path": "caesar_vault/blog/marketing/在 AI 創業裡，快不是選項，是生存法則。.md",
+      "size": 632,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "在 AI 創業裡，快不是選項，是生存法則。",
+      "cjk_ratio": 0.614,
+      "first_line": "在 AI 創業裡，快不是選項，是生存法則。",
+      "sha1_8": "83f482cb515f"
+    },
+    {
+      "path": "caesar_vault/blog/marketing/Base 44 創辦人在 6 個月內.md",
+      "size": 232,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Base 44 創辦人在 6 個月內",
+      "cjk_ratio": 0.362,
+      "first_line": "，獨自將公司從 $0 做到被 Wix 以 $8000 萬美元收購。深入了解他的成長策略、開發心法與幕後故事，看他如何改寫規則。必讀文章👇https://blog.caesar-chi.com/.../base-44-mayor-schlommo.html",
+      "sha1_8": "46f8b25d1726"
+    },
+    {
+      "path": "caesar_vault/thinking/test.md",
+      "size": 15674,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "test",
+      "cjk_ratio": 0.694,
+      "first_line": "人工智慧（AI）正在**深刻改變工作性質**並淘汰許多被稱為「假工作」的內容。",
+      "sha1_8": "61755e1db292"
+    },
+    {
+      "path": "caesar_vault/codingBear/Coding Bear.md",
+      "size": 657,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "Coding Bear",
+      "cjk_ratio": 0.393,
+      "first_line": "台中場已經結束",
+      "sha1_8": "b4c4db3bf35b"
+    },
+    {
+      "path": "caesar_vault/codingBear/會眾名單.md",
+      "size": 395,
+      "ext": ".md",
+      "top_dir": "caesar_vault",
+      "title": "會眾名單",
+      "cjk_ratio": 0.069,
+      "first_line": "",
+      "sha1_8": "c839811e2174"
+    }
+  ]
+}

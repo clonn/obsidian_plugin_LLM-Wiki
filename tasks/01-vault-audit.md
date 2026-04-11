@@ -1,4 +1,4 @@
-- [ ] Audit the existing vault
+- [x] Audit the existing vault
 
 ## Why
 Before touching anything we need a read-only audit of
