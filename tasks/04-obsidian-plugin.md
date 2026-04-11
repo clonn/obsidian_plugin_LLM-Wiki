@@ -1,4 +1,4 @@
-- [ ] Build the `llm-kb` Obsidian plugin
+- [x] Build the `llm-kb` Obsidian plugin
 
 ## Why
 The user wants an in-Obsidian front door to the Karpathy workflow so they

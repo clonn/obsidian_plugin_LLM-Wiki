@@ -1,9 +1,10 @@
 # Node / Obsidian plugin
 node_modules/
-plugin/main.js
 plugin/main.js.map
 plugin/dist/
 plugin/.obsidian-build-cache/
+# NOTE: plugin/main.js is checked in so the vault symlink picks up a working
+# build without needing `npm run build` on every clone.
 
 # Python / uv
 .venv/
