@@ -54,8 +54,14 @@ export default class LlmKbPlugin extends Plugin {
 
     this.addCommand({
       id: "llm-kb-compile",
-      name: "Compile wiki from raw/",
-      callback: () => this.runTool("compile.compile", []),
+      name: "Compile status",
+      callback: () => this.runTool("compile.compile", ["--status"]),
+    });
+
+    this.addCommand({
+      id: "llm-kb-compile-generate",
+      name: "Compile: generate prompt for Claude Code",
+      callback: () => this.runTool("compile.compile", ["--incremental"]),
     });
 
     this.addCommand({

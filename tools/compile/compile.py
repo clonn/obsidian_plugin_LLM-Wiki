@@ -109,6 +109,26 @@ def _save_last_compile(vault: Path, raw_files: list[Path]) -> None:
     p.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
 
+def _count_orphan_raw(vault: Path) -> tuple[int, int, list[str]]:
+    """Count how many raw files are NOT referenced in any wiki article's sources."""
+    raw = vault / "raw"
+    wiki = vault / "wiki"
+    raw_files = [str(p.relative_to(vault)) for p in _list_md(raw)]
+
+    referenced: set[str] = set()
+    for p in _list_md(wiki):
+        try:
+            text = p.read_text(encoding="utf-8", errors="replace")
+            for line in text.splitlines()[:20]:
+                if line.strip().startswith("- raw/"):
+                    referenced.add(line.strip().lstrip("- ").strip())
+        except Exception:
+            pass
+
+    orphans = [r for r in raw_files if r not in referenced]
+    return len(raw_files), len(orphans), orphans
+
+
 @click.command()
 @click.option(
     "--vault",
@@ -126,12 +146,37 @@ def _save_last_compile(vault: Path, raw_files: list[Path]) -> None:
     default=False,
     help="Only compile raw files added/modified since last compile.",
 )
-def main(vault: Path, out: Path | None, incremental: bool) -> None:
+@click.option(
+    "--status",
+    "show_status",
+    is_flag=True,
+    default=False,
+    help="Show compile status without generating a prompt.",
+)
+def main(vault: Path, out: Path | None, incremental: bool, show_status: bool) -> None:
     """Emit a compile prompt bundle for Claude Code."""
     raw = vault / "raw"
     wiki = vault / "wiki"
     raw_files = _list_md(raw)
     wiki_files = _list_md(wiki)
+
+    if show_status:
+        total_raw, n_orphan, orphans = _count_orphan_raw(vault)
+        compiled = total_raw - n_orphan
+        pct = (compiled / total_raw * 100) if total_raw else 0
+        click.echo(f"\n  Compile status:")
+        click.echo(f"  raw: {total_raw} files | wiki: {len(wiki_files)} articles")
+        click.echo(f"  compiled: {compiled} ({pct:.0f}%) | orphan: {n_orphan}")
+        if n_orphan > 0:
+            click.echo(f"\n  Orphan raw files (need compile):")
+            for o in orphans[:5]:
+                click.echo(f"    - {o}")
+            if n_orphan > 5:
+                click.echo(f"    ... and {n_orphan - 5} more")
+        else:
+            click.echo(f"\n  All raw files are compiled!")
+        click.echo()
+        return
 
     if incremental:
         prev = _load_last_compile(vault)
