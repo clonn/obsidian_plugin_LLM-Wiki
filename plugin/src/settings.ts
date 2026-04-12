@@ -14,7 +14,7 @@ export interface LlmKbSettings {
 
 export const DEFAULT_SETTINGS: LlmKbSettings = {
   toolsPath: "/Users/caesarchi/workspace/clonn/project_Obsidian_graph/tools",
-  uvCommand: "uv",
+  uvCommand: "/Users/caesarchi/.local/bin/uv",
   claudeCommand: "claude",
   language: "zh-TW",
 };
@@ -47,7 +47,7 @@ export class LlmKbSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName("uv command")
-      .setDesc("The uv binary used to run the python tools. Usually `uv`.")
+      .setDesc("Full path to the uv binary (run `which uv` in terminal to find it).")
       .addText((t) =>
         t
           .setValue(this.plugin.settings.uvCommand)
