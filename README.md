@@ -16,18 +16,34 @@ raw/  ──Ingest──►  LLM Compiler  ──Compile──►  wiki/
 
 ---
 
-## Quick Start (One Command)
+## Quick Start
 
 ### Prerequisites
 
 | Tool | Install |
 |------|---------|
 | [Obsidian](https://obsidian.md/) v1.5+ | Download from obsidian.md |
-| [Node.js](https://nodejs.org/) v20+ | `brew install node` |
+| [Node.js](https://nodejs.org/) v18+ | `brew install node` |
 | [uv](https://docs.astral.sh/uv/) | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
 | [Claude Code](https://claude.ai/code) | `npm install -g @anthropic-ai/claude-code` |
 
-### Install
+### Option A: npm CLI (recommended)
+
+```bash
+# Install globally
+npm install -g obsidian-llm-wiki
+
+# One command sets up everything
+llm-kb init ~/path/to/your/obsidian-vault
+```
+
+Or use without installing:
+
+```bash
+npx obsidian-llm-wiki init ~/path/to/your/obsidian-vault
+```
+
+### Option B: Clone the repo
 
 ```bash
 git clone https://github.com/clonn/obsidian_plugin_LLM-Wiki.git
@@ -179,7 +195,11 @@ your-vault/
 
 ```
 obsidian_plugin_LLM-Wiki/
-├── install.sh              # One-command setup
+├── cli/                    # npm CLI package (obsidian-llm-wiki)
+│   ├── bin/llm-kb.mjs      #   entry point
+│   ├── lib/                #   command implementations
+│   └── package.json
+├── install.sh              # Alternative one-command setup
 ├── plugin/                 # Obsidian plugin (TypeScript)
 │   ├── src/main.ts         #   commands, status bar, settings
 │   ├── manifest.json
