@@ -91,6 +91,18 @@ export default class LlmKbPlugin extends Plugin {
     });
 
     this.addCommand({
+      id: "llm-kb-dashboard",
+      name: "Knowledge dashboard",
+      callback: () => this.runTool("status.dashboard", []),
+    });
+
+    this.addCommand({
+      id: "llm-kb-autolink",
+      name: "Auto-link notes (connect graph)",
+      callback: () => this.runTool("link.autolink", ["--apply"]),
+    });
+
+    this.addCommand({
       id: "llm-kb-export-graph",
       name: "Export link graph (JSON)",
       callback: () => this.runTool("graph.export_graph", []),
