@@ -8,6 +8,7 @@ import { lint } from "../lib/lint.mjs";
 import { ingest } from "../lib/ingest.mjs";
 import { audit } from "../lib/audit.mjs";
 import { status } from "../lib/status.mjs";
+import { search } from "../lib/search.mjs";
 
 const HELP = `
   obsidian-llm-wiki — Karpathy-style LLM knowledge base CLI
@@ -17,6 +18,7 @@ const HELP = `
     llm-kb ingest  <file> [--vault V]   Ingest a file into raw/
     llm-kb compile [--vault V]          Generate compile prompt for Claude Code
     llm-kb query   <question> [--vault V]  Ask the wiki
+    llm-kb search  <query> [--vault V]  Full-text search across wiki + notes
     llm-kb lint    [--vault V]          Check wiki integrity
     llm-kb audit   [--vault V]          Read-only vault inventory
     llm-kb status  [--vault V]          Show KB stats
@@ -41,6 +43,7 @@ const commands = {
   lint,
   audit,
   status,
+  search,
   help: () => {
     console.log(HELP);
     process.exit(0);
