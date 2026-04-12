@@ -1,6 +1,6 @@
 {
   "name": "obsidian-llm-wiki",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Karpathy-style LLM knowledge base CLI for Obsidian — ingest, compile, query, lint your vault with Claude Code",
   "keywords": [
     "obsidian",
