@@ -115,6 +115,18 @@ export default class LlmKbPlugin extends Plugin {
     });
 
     this.addCommand({
+      id: "llm-kb-graph-analyze",
+      name: "Analyze graph (deep structure + canvas)",
+      callback: () => this.runTool("graph.analyze", ["--canvas"]),
+    });
+
+    this.addCommand({
+      id: "llm-kb-graph-strengthen",
+      name: "Strengthen graph connections",
+      callback: () => this.runTool("graph.strengthen", ["--apply"]),
+    });
+
+    this.addCommand({
       id: "llm-kb-open-index",
       name: "Open index.md",
       callback: async () => {
