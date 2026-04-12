@@ -17,6 +17,7 @@ Claude Code can update it in-place. The plugin then streams the result back.
 
 from __future__ import annotations
 
+import json
 from datetime import datetime
 from pathlib import Path
 
@@ -89,6 +90,25 @@ def _list_md(d: Path) -> list[Path]:
     return sorted(p for p in d.rglob("*.md") if p.name != "README.md")
 
 
+def _load_last_compile(vault: Path) -> dict:
+    """Load last_compile.json manifest (file→mtime map)."""
+    p = vault / ".llm-kb" / "last_compile.json"
+    if p.exists():
+        return json.loads(p.read_text(encoding="utf-8"))
+    return {}
+
+
+def _save_last_compile(vault: Path, raw_files: list[Path]) -> None:
+    """Save current raw file→mtime map for incremental builds."""
+    manifest = {}
+    for f in raw_files:
+        rel = str(f.relative_to(vault))
+        manifest[rel] = f.stat().st_mtime
+    p = vault / ".llm-kb" / "last_compile.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+
+
 @click.command()
 @click.option(
     "--vault",
@@ -100,12 +120,32 @@ def _list_md(d: Path) -> list[Path]:
     default=None,
     type=click.Path(path_type=Path),
 )
-def main(vault: Path, out: Path | None) -> None:
+@click.option(
+    "--incremental",
+    is_flag=True,
+    default=False,
+    help="Only compile raw files added/modified since last compile.",
+)
+def main(vault: Path, out: Path | None, incremental: bool) -> None:
     """Emit a compile prompt bundle for Claude Code."""
     raw = vault / "raw"
     wiki = vault / "wiki"
     raw_files = _list_md(raw)
     wiki_files = _list_md(wiki)
+
+    if incremental:
+        prev = _load_last_compile(vault)
+        new_files = []
+        for f in raw_files:
+            rel = str(f.relative_to(vault))
+            prev_mtime = prev.get(rel)
+            if prev_mtime is None or f.stat().st_mtime > prev_mtime:
+                new_files.append(f)
+        if not new_files:
+            click.echo("incremental: nothing new since last compile.")
+            return
+        click.echo(f"incremental: {len(new_files)} new/modified files (of {len(raw_files)} total)")
+        raw_files = new_files
 
     manifest = "\n".join(f"- `raw/{p.relative_to(raw)}`" for p in raw_files) or "- (empty)"
     wiki_manifest = (
@@ -125,6 +165,9 @@ def main(vault: Path, out: Path | None) -> None:
     ts = datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
     path = queue / f"compile_{ts}.md"
     path.write_text(prompt, encoding="utf-8")
+
+    # Save manifest for next incremental run
+    _save_last_compile(vault, _list_md(vault / "raw"))
 
     click.echo(f"compile prompt → {path}")
     click.echo(f"  raw: {len(raw_files)} files")
