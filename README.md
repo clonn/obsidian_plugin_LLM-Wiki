@@ -14,78 +14,75 @@ raw/  ──Ingest──►  LLM Compiler  ──Compile──►  wiki/
                        └───Lint────┘
 ```
 
-## Quick Start
+---
+
+## Quick Start (One Command)
 
 ### Prerequisites
 
-- [Obsidian](https://obsidian.md/) (v1.5+)
-- [Node.js](https://nodejs.org/) (v20+)
-- [uv](https://docs.astral.sh/uv/) (Python package manager)
-- [Claude Code](https://claude.ai/code) (the LLM compiler brain)
+| Tool | Install |
+|------|---------|
+| [Obsidian](https://obsidian.md/) v1.5+ | Download from obsidian.md |
+| [Node.js](https://nodejs.org/) v20+ | `brew install node` |
+| [uv](https://docs.astral.sh/uv/) | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
+| [Claude Code](https://claude.ai/code) | `npm install -g @anthropic-ai/claude-code` |
 
-### Step 1: Clone and build
+### Install
 
 ```bash
 git clone https://github.com/clonn/obsidian_plugin_LLM-Wiki.git
 cd obsidian_plugin_LLM-Wiki
 
-# Build the Obsidian plugin
-cd plugin
-npm install
-npm run build          # produces main.js
-
-# Install the Python tools
-cd ../tools
-uv sync                # creates .venv and installs deps
+# One command does everything:
+./install.sh ~/path/to/your/obsidian-vault
 ```
 
-### Step 2: Link the plugin into your vault
+The install script will:
+1. Build the Obsidian plugin (`npm install` + `npm run build`)
+2. Install Python tools (`uv sync`)
+3. Symlink the plugin into your vault's `.obsidian/plugins/`
+4. Register `llm-kb` in `community-plugins.json`
+5. Create the KB folder structure (`raw/`, `wiki/`, `notes/`, `_archive/`)
 
-```bash
-# Replace <YOUR_VAULT> with your Obsidian vault path
-VAULT="$HOME/Dropbox/caesar_obsidian"
-
-mkdir -p "$VAULT/.obsidian/plugins"
-ln -sfn "$(pwd)/../plugin" "$VAULT/.obsidian/plugins/llm-kb"
-```
-
-Then in Obsidian:
+Then **restart Obsidian** and:
 1. **Settings** > **Community plugins** > turn off **Restricted mode**
-2. Find **LLM Knowledge Base** in the installed list and **Enable** it
-3. (Optional) Go to plugin settings to adjust paths
+2. Find **LLM Knowledge Base** in the list > **Enable**
+3. <kbd>Cmd+P</kbd> > type `LLM-KB` > you're in
 
-### Step 3: Initialize the KB structure in your vault
+> **Tip:** If the vault is at `~/Dropbox/caesar_obsidian` or
+> `~/Library/CloudStorage/Dropbox/caesar_obsidian`, the script auto-detects
+> it — just run `./install.sh` with no arguments.
 
-The system expects these folders inside your vault. Create them if they don't exist:
+### Manual Install (if you prefer)
 
-```bash
-VAULT="$HOME/Dropbox/caesar_obsidian"
-
-mkdir -p "$VAULT/raw"
-mkdir -p "$VAULT/wiki/concepts"
-mkdir -p "$VAULT/wiki/projects"
-mkdir -p "$VAULT/wiki/people"
-mkdir -p "$VAULT/wiki/derived"
-mkdir -p "$VAULT/_archive"
-```
-
-Or simply run the organize tool which sets everything up:
+<details>
+<summary>Click to expand manual steps</summary>
 
 ```bash
-cd tools
-uv run python -m organize.reorganize --vault "$VAULT" --dry-run   # preview
-uv run python -m organize.reorganize --vault "$VAULT" --apply      # execute
+# 1. Build plugin
+cd plugin && npm install && npm run build && cd ..
+
+# 2. Install Python tools
+cd tools && uv sync && cd ..
+
+# 3. Symlink into vault (use your actual vault path)
+VAULT="$HOME/Library/CloudStorage/Dropbox/caesar_obsidian"
+mkdir -p "$VAULT/.obsidian/plugins"
+ln -sfn "$(pwd)/plugin" "$VAULT/.obsidian/plugins/llm-kb"
+
+# 4. Create KB folders
+mkdir -p "$VAULT"/{raw,wiki/concepts,wiki/projects,wiki/people,wiki/derived,_archive,notes}
 ```
 
-### Step 4: Start the loop
+Then restart Obsidian and enable the plugin.
 
-You're ready. Open Obsidian and press <kbd>Cmd+P</kbd>, type `LLM-KB`.
+</details>
 
 ---
 
 ## Usage
 
-### In Obsidian (Command Palette)
+### In Obsidian (Cmd+P)
 
 | Command | What it does |
 |---------|-------------|
@@ -96,75 +93,58 @@ You're ready. Open Obsidian and press <kbd>Cmd+P</kbd>, type `LLM-KB`.
 | **LLM-KB: Open index.md** | Jump to the knowledge base entry point |
 | **LLM-KB: Open log sidebar** | Show streaming output of CLI runs |
 
-The status bar shows live counts: `raw:N · wiki:M`.
+Status bar shows live counts: `raw:N · wiki:M`.
 
-### From Terminal (CLI)
+### From Terminal
 
 ```bash
 cd tools
 
-# Audit — read-only inventory of your vault
-uv run python -m audit.vault_audit --vault ~/Dropbox/caesar_obsidian
+# Audit your vault
+uv run python -m audit.vault_audit --vault <YOUR_VAULT>
 
-# Ingest — add a new source to raw/
-uv run python -m ingest.ingest --vault ~/Dropbox/caesar_obsidian /path/to/article.md
+# Ingest a new source
+uv run python -m ingest.ingest --vault <YOUR_VAULT> /path/to/article.md
 
-# Compile — generate prompt for Claude Code to compile raw/ into wiki/
-uv run python -m compile.compile --vault ~/Dropbox/caesar_obsidian
+# Compile raw/ into wiki/ (generates a prompt for Claude Code)
+uv run python -m compile.compile --vault <YOUR_VAULT>
 
-# Query — ask a question, stub the answer in wiki/derived/
-uv run python -m query.query --vault ~/Dropbox/caesar_obsidian "LLM 知識庫的四個階段是什麼？"
+# Ask a question
+uv run python -m query.query --vault <YOUR_VAULT> "your question here"
 
 # Lint — check wiki integrity
-uv run python -m lint.lint --vault ~/Dropbox/caesar_obsidian
+uv run python -m lint.lint --vault <YOUR_VAULT>
 
-# Reorganize — classify and move scattered files into notes/<category>/
-uv run python -m organize.reorganize --vault ~/Dropbox/caesar_obsidian --dry-run
-uv run python -m organize.reorganize --vault ~/Dropbox/caesar_obsidian --apply
+# Reorganize — sort scattered files into notes/<category>/
+uv run python -m organize.reorganize --vault <YOUR_VAULT> --dry-run   # preview first
+uv run python -m organize.reorganize --vault <YOUR_VAULT> --apply     # then apply
 ```
 
-### With Claude Code (the LLM compiler)
+### With Claude Code
 
-The tools generate **prompt bundles** in `.llm-kb/queue/`. Hand these to Claude Code:
+The compile and query tools generate **prompt bundles** in `.llm-kb/queue/`. Hand them to Claude Code:
 
 ```bash
-# After running compile, Claude Code reads the prompt and does the work:
-claude "Read the file at .llm-kb/queue/compile_2026-04-11T23-47-25.md and execute it"
-```
+# Option A: let Claude Code read and execute the prompt
+claude "Read .llm-kb/queue/compile_*.md and execute the instructions"
 
-Or use the plugin's sidebar — it streams the output live.
+# Option B: use the Obsidian plugin sidebar — it streams output live
+```
 
 ---
 
 ## Architecture (Karpathy's Four Phases)
 
-Based on Andrej Karpathy's [LLM knowledge base architecture](https://x.com/karpathy/status/2039805659525644595):
+Based on [Karpathy's tweet](https://x.com/karpathy/status/2039805659525644595):
 
-### Phase 1: Ingest
+| Phase | Action | Where |
+|-------|--------|-------|
+| **1. Ingest** | Collect sources (Web Clipper, PDFs, transcripts) | `raw/` (append-only) |
+| **2. Compile** | LLM reads `raw/`, builds concept articles with backlinks | `wiki/` |
+| **3. Query** | Ask questions, file answers back into the wiki | `wiki/derived/` |
+| **4. Lint** | Scan for contradictions, gaps, dead links → loop back to Compile | `wiki/` |
 
-Sources land in `raw/`. The Web Clipper, PDFs, transcripts, meeting notes — all go here. **Append-only, never modified.**
-
-### Phase 2: Compile (LLM Compiler)
-
-Claude Code reads `raw/` and builds structured wiki articles:
-- `wiki/concepts/` — frameworks, methods, technical terms
-- `wiki/projects/` — active and past projects
-- `wiki/people/` — contacts, collaborators
-- Auto-generated backlinks, cross-references, and `index.md` summary
-
-### Phase 3: Query & Enhance
-
-Ask questions against the wiki. Answers get filed into `wiki/derived/` — every exploration adds to the knowledge base, nothing is lost.
-
-### Phase 4: Lint & Maintain
-
-Periodic scans for:
-- Contradictions between articles
-- Missing information (impute via web search)
-- Dead links and orphan files
-- New connections between concepts
-
-After linting, the cycle returns to Phase 2. The wiki keeps growing.
+The wiki keeps growing. Every question you ask becomes part of the knowledge base.
 
 ---
 
@@ -172,26 +152,24 @@ After linting, the cycle returns to Phase 2. The wiki keeps growing.
 
 ```
 your-vault/
-├── raw/                    # Phase 1: ingested sources (append-only)
-├── wiki/                   # Phase 2: LLM-compiled articles
+├── raw/                    # Ingested sources (append-only)
+├── wiki/                   # LLM-compiled articles
 │   ├── concepts/           #   frameworks, methods, terms
 │   ├── projects/           #   project-specific articles
 │   ├── people/             #   people profiles
-│   └── derived/            #   Phase 3: query answers
-├── notes/                  # User's organized working notes
-│   ├── ai-tooling/
-│   ├── blog-drafts/
-│   ├── business/
-│   ├── cymkube/
-│   ├── finance/
-│   ├── infra/
-│   ├── openclaw/
-│   ├── people-meetings/
-│   ├── sowork/
+│   └── derived/            #   query answers filed back
+├── notes/                  # Your organized working notes
+│   ├── ai-tooling/         #   Claude, LLM tools, AI guides
+│   ├── blog-drafts/        #   drafts
+│   ├── business/           #   strategy, company ops
+│   ├── cymkube/            #   Cymkube / DX Team
+│   ├── finance/            #   trading, payments
+│   ├── infra/              #   servers, credentials
+│   ├── openclaw/           #   OpenClaw / lobster
+│   ├── people-meetings/    #   contacts, meeting notes
+│   ├── sowork/             #   sowork HR OS
 │   └── assets/             #   images
 ├── _archive/               # Frozen legacy notes
-│   ├── trash/
-│   └── tiny/
 ├── index.md                # KB entry point (auto-maintained)
 ├── log.md                  # Execution history
 └── .llm-kb/queue/          # Prompt bundles for Claude Code
@@ -200,45 +178,46 @@ your-vault/
 ## Repo Structure
 
 ```
-project_Obsidian_graph/
-├── plugin/                 # Obsidian plugin (TypeScript + esbuild)
-│   ├── src/
-│   │   ├── main.ts         # Plugin entry: commands, status bar, settings
-│   │   ├── settings.ts     # Settings tab (tools path, uv cmd, language)
-│   │   ├── sidebarView.ts  # Log streaming sidebar
-│   │   └── runner.ts       # child_process wrapper
+obsidian_plugin_LLM-Wiki/
+├── install.sh              # One-command setup
+├── plugin/                 # Obsidian plugin (TypeScript)
+│   ├── src/main.ts         #   commands, status bar, settings
 │   ├── manifest.json
-│   ├── main.js             # Built artifact (checked in)
-│   └── package.json
-├── tools/                  # Python CLIs (managed with uv)
-│   ├── audit/              # vault_audit.py — read-only inventory
-│   ├── ingest/             # ingest.py — normalize into raw/
-│   ├── compile/            # compile.py — emit compile prompts
-│   ├── query/              # query.py — stub + prompt for questions
-│   ├── lint/               # lint.py — integrity checks
-│   ├── organize/           # reorganize.py — classify & move files
+│   ├── main.js             #   built artifact (checked in)
+│   └── styles.css
+├── tools/                  # Python CLIs (uv-managed)
+│   ├── audit/              #   vault_audit.py
+│   ├── ingest/             #   ingest.py
+│   ├── compile/            #   compile.py
+│   ├── query/              #   query.py
+│   ├── lint/               #   lint.py
+│   ├── organize/           #   reorganize.py
 │   └── pyproject.toml
 ├── .claude/agents/
-│   └── kb-verifier.md      # Independent verification subagent
-├── tasks/                  # Execution log (checkbox-tracked)
-├── CLAUDE.md               # AI assistant instructions
-└── README.md               # This file
+│   └── kb-verifier.md      #   independent verification subagent
+├── tasks/                  #   execution log (all checked off)
+├── CLAUDE.md               #   AI assistant instructions
+└── README.md
 ```
 
 ## Plugin Settings
 
+Open **Settings > LLM Knowledge Base** in Obsidian:
+
 | Setting | Default | Description |
 |---------|---------|-------------|
-| Tools path | `~/workspace/clonn/project_Obsidian_graph/tools` | Where the Python CLIs live |
-| uv command | `uv` | The uv binary |
-| Claude Code command | `claude` | Claude Code CLI binary |
+| Tools path | auto-detected | Absolute path to the `tools/` directory |
+| uv command | `uv` | Path to the uv binary |
+| Claude Code command | `claude` | Path to the Claude Code CLI |
 | Language | `zh-TW` | Output language (Traditional Chinese / English) |
+
+---
 
 ## The Daily Workflow
 
 ```
 Morning:
-  1. Read articles → Web Clipper saves to raw/
+  1. Read articles → Obsidian Web Clipper saves to raw/
   2. Cmd+P → "LLM-KB: Compile wiki" → Claude Code builds wiki articles
 
 Anytime:
@@ -249,14 +228,29 @@ Weekly:
   5. Review index.md → see the big picture
 ```
 
+## Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| Plugin not showing in Obsidian | Restart Obsidian. Check Settings > Community plugins > Restricted mode is **OFF** |
+| `ENOENT: no such file or directory` | Symlink is broken. Re-run `./install.sh <vault-path>` |
+| `uv: command not found` | Install uv: `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
+| Compile says "0 raw files" | Ingest some notes first: Cmd+P > "LLM-KB: Ingest current note" |
+| Reorganize says "0 operations" | Files are already organized. This is normal after first run. |
+| Plugin settings show wrong path | Open Settings > LLM Knowledge Base > update "Tools path" |
+| macOS Dropbox path issue | Dropbox moved to `~/Library/CloudStorage/Dropbox/` on newer macOS. The install script handles this automatically. |
+
 ## References
 
-- **Karpathy's system** — [GitHub Gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) | [Tweet](https://x.com/karpathy/status/2039805659525644595)
-- **Obsidian API** — [docs.obsidian.md](https://docs.obsidian.md/Home)
-- **Obsidian Web Clipper** — [obsidian.md/clipper](https://obsidian.md/clipper)
-- **graphify** — [graphify.net](https://graphify.net/)
-- **uv** — [docs.astral.sh/uv](https://docs.astral.sh/uv/)
-- **Claude Code** — [claude.ai/code](https://claude.ai/code)
+| Resource | Link |
+|----------|------|
+| Karpathy's system (Gist) | [github.com/karpathy/442a6bf...](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) |
+| Karpathy's tweet | [x.com/karpathy/status/2039805659525644595](https://x.com/karpathy/status/2039805659525644595) |
+| Obsidian API docs | [docs.obsidian.md](https://docs.obsidian.md/Home) |
+| Obsidian Web Clipper | [obsidian.md/clipper](https://obsidian.md/clipper) |
+| graphify | [graphify.net](https://graphify.net/) |
+| uv (Python package manager) | [docs.astral.sh/uv](https://docs.astral.sh/uv/) |
+| Claude Code | [claude.ai/code](https://claude.ai/code) |
 
 ## License
 

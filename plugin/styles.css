@@ -1,0 +1,11 @@
+/* llm-kb plugin styles */
+.llm-kb-log {
+  white-space: pre-wrap;
+  font-size: 0.85em;
+  font-family: var(--font-monospace);
+  padding: 8px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+  max-height: 600px;
+  overflow-y: auto;
+}
