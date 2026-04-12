@@ -74,6 +74,18 @@ export default class LlmKbPlugin extends Plugin {
     });
 
     this.addCommand({
+      id: "llm-kb-search",
+      name: "Search wiki",
+      callback: () => this.promptAndSearch(),
+    });
+
+    this.addCommand({
+      id: "llm-kb-export-graph",
+      name: "Export link graph (JSON)",
+      callback: () => this.runTool("graph.export_graph", []),
+    });
+
+    this.addCommand({
       id: "llm-kb-open-log-view",
       name: "Open log sidebar",
       callback: () => this.activateLogView(),
@@ -199,9 +211,16 @@ export default class LlmKbPlugin extends Plugin {
   }
 
   private async promptAndQuery(): Promise<void> {
-    new QueryModal(this.app, async (question) => {
+    new QueryModal(this.app, "Ask the wiki", "你的問題...", async (question) => {
       if (!question.trim()) return;
       await this.runTool("query.query", [question]);
+    }).open();
+  }
+
+  private async promptAndSearch(): Promise<void> {
+    new QueryModal(this.app, "Search wiki", "搜尋關鍵字...", async (query) => {
+      if (!query.trim()) return;
+      await this.runTool("search.search", [query]);
     }).open();
   }
 }
@@ -209,6 +228,8 @@ export default class LlmKbPlugin extends Plugin {
 class QueryModal extends Modal {
   constructor(
     app: App,
+    private title: string,
+    private placeholder: string,
     private onSubmit: (question: string) => void,
   ) {
     super(app);
@@ -217,11 +238,11 @@ class QueryModal extends Modal {
   onOpen(): void {
     const { contentEl } = this;
     contentEl.empty();
-    contentEl.createEl("h3", { text: "Ask the wiki" });
+    contentEl.createEl("h3", { text: this.title });
     const input = contentEl.createEl("textarea", {
       attr: {
         style: "width:100%;height:100px;",
-        placeholder: "你的問題...",
+        placeholder: this.placeholder,
       },
     });
     const btn = contentEl.createEl("button", { text: "Ask" });
