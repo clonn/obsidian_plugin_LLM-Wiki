@@ -220,8 +220,48 @@ export default class LlmKbPlugin extends Plugin {
   private async promptAndSearch(): Promise<void> {
     new QueryModal(this.app, "Search wiki", "搜尋關鍵字...", async (query) => {
       if (!query.trim()) return;
-      await this.runTool("search.search", [query]);
+      await this.runSearch(query);
     }).open();
+  }
+
+  private async runSearch(query: string): Promise<void> {
+    const vault = this.vaultPath();
+    if (!vault) {
+      new Notice("Cannot determine vault path.");
+      return;
+    }
+    const view = await this.activateLogView();
+    view.clear();
+    view.append(`Searching: ${query}\n\n`);
+
+    let output = "";
+    try {
+      await runStreaming({
+        cmd: this.settings.uvCommand,
+        args: ["run", "python", "-m", "search.search", "--vault", vault, query],
+        cwd: this.settings.toolsPath,
+        onStdout: (c) => { output += c; },
+        onStderr: (c) => { view.append(c); },
+      });
+
+      // Parse search results and render with clickable links
+      const lines = output.split("\n");
+      for (const line of lines) {
+        const match = line.match(/^\s*\d+\.\s*\[[\d.]+\]\s*(.+\.md)\s*$/);
+        if (match) {
+          const filePath = match[1].trim();
+          view.appendLink(filePath, filePath);
+          view.append("\n");
+        } else if (line.match(/^\s{5}\S/)) {
+          // Context line (indented)
+          view.append(`  ${line.trim()}\n`);
+        } else if (line.trim()) {
+          view.append(line + "\n");
+        }
+      }
+    } catch (e: unknown) {
+      view.append(`\n[error] ${String(e)}\n`);
+    }
   }
 }
 

@@ -41,6 +41,21 @@ export class LlmKbLogView extends ItemView {
     this.logEl.scrollIntoView({ block: "end" });
   }
 
+  appendLink(display: string, filePath: string): void {
+    if (!this.logEl) return;
+    const a = this.logEl.createEl("a", {
+      text: display,
+      cls: "internal-link",
+      attr: { "data-href": filePath },
+    });
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      // Strip .md for Obsidian's openLinkText
+      const linkPath = filePath.replace(/\.md$/, "");
+      this.app.workspace.openLinkText(linkPath, "", true);
+    });
+  }
+
   clear(): void {
     if (!this.logEl) return;
     this.logEl.empty();
