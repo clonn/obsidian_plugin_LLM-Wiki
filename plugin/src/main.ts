@@ -301,18 +301,19 @@ class InputModal extends Modal {
       cls: "mod-cta",
     });
 
-    this.registerDomEvent(btn, "click", () => {
+    const submit = () => {
       const value = input.value.trim();
       if (!value) return;
       this.close();
       this.opts.onSubmit(value);
-    });
+    };
 
-    // Submit on Enter (without Shift)
-    this.registerDomEvent(input, "keydown", (e: KeyboardEvent) => {
+    btn.addEventListener("click", submit);
+
+    input.addEventListener("keydown", (e: KeyboardEvent) => {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
-        btn.click();
+        submit();
       }
     });
 
