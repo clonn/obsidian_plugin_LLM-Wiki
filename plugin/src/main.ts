@@ -1,5 +1,6 @@
 import {
   App,
+  Editor,
   Modal,
   Notice,
   Plugin,
@@ -16,20 +17,29 @@ import { runStreaming } from "./runner";
 
 export default class LlmKbPlugin extends Plugin {
   settings!: LlmKbSettings;
-  statusBar!: HTMLElement;
+  statusBarEl!: HTMLElement;
 
   async onload(): Promise<void> {
     await this.loadSettings();
 
+    // ── Register view ───────────────────────────────────────
     this.registerView(
       LLM_KB_LOG_VIEW,
       (leaf: WorkspaceLeaf) => new LlmKbLogView(leaf),
     );
 
-    this.statusBar = this.addStatusBarItem();
-    this.statusBar.setText("🧠 LLM-KB");
+    // ── Status bar (desktop only) ───────────────────────────
+    this.statusBarEl = this.addStatusBarItem();
+    this.statusBarEl.createEl("span", { text: "LLM-KB", cls: "llm-kb-status" });
     this.refreshStatusBar();
+    // Refresh counts every 30 seconds
+    this.registerInterval(
+      window.setInterval(() => this.refreshStatusBar(), 30_000),
+    );
 
+    // ── Commands ────────────────────────────────────────────
+
+    // Ingest: only available when a file is open
     this.addCommand({
       id: "llm-kb-ingest-current-note",
       name: "Ingest current note into raw/",
@@ -51,13 +61,39 @@ export default class LlmKbPlugin extends Plugin {
     this.addCommand({
       id: "llm-kb-query",
       name: "Ask the wiki",
-      callback: () => this.promptAndQuery(),
+      callback: () => {
+        new InputModal(this.app, {
+          title: "Ask the wiki",
+          placeholder: "你的問題...",
+          buttonText: "Ask",
+          onSubmit: (q) => this.runTool("query.query", [q]),
+        }).open();
+      },
     });
 
     this.addCommand({
       id: "llm-kb-lint",
       name: "Lint wiki",
       callback: () => this.runTool("lint.lint", []),
+    });
+
+    this.addCommand({
+      id: "llm-kb-search",
+      name: "Search wiki",
+      callback: () => {
+        new InputModal(this.app, {
+          title: "Search wiki",
+          placeholder: "搜尋關鍵字...",
+          buttonText: "Search",
+          onSubmit: (q) => this.runSearch(q),
+        }).open();
+      },
+    });
+
+    this.addCommand({
+      id: "llm-kb-export-graph",
+      name: "Export link graph (JSON)",
+      callback: () => this.runTool("graph.export_graph", []),
     });
 
     this.addCommand({
@@ -68,21 +104,9 @@ export default class LlmKbPlugin extends Plugin {
         if (file instanceof TFile) {
           await this.app.workspace.getLeaf(true).openFile(file);
         } else {
-          new Notice("index.md not found — create it first.");
+          new Notice("index.md not found — run init first.");
         }
       },
-    });
-
-    this.addCommand({
-      id: "llm-kb-search",
-      name: "Search wiki",
-      callback: () => this.promptAndSearch(),
-    });
-
-    this.addCommand({
-      id: "llm-kb-export-graph",
-      name: "Export link graph (JSON)",
-      callback: () => this.runTool("graph.export_graph", []),
     });
 
     this.addCommand({
@@ -91,6 +115,7 @@ export default class LlmKbPlugin extends Plugin {
       callback: () => this.activateLogView(),
     });
 
+    // ── Settings tab ────────────────────────────────────────
     this.addSettingTab(new LlmKbSettingTab(this.app, this));
   }
 
@@ -110,31 +135,26 @@ export default class LlmKbPlugin extends Plugin {
     await this.saveData(this.settings);
   }
 
-  /** Vault's absolute path on disk. */
+  // ── Helpers ─────────────────────────────────────────────
+
   private vaultPath(): string {
-    // @ts-expect-error — getBasePath is implemented by Obsidian's FileSystemAdapter.
+    // @ts-expect-error — getBasePath is implemented by FileSystemAdapter
     return this.app.vault.adapter.getBasePath?.() ?? "";
   }
 
-  private async refreshStatusBar(): Promise<void> {
-    const vaultPath = this.vaultPath();
-    if (!vaultPath) {
-      this.statusBar.setText("🧠 LLM-KB ·  ?");
-      return;
+  private refreshStatusBar(): void {
+    const all = this.app.vault.getMarkdownFiles();
+    let raw = 0;
+    let wiki = 0;
+    for (const f of all) {
+      if (f.path.startsWith("raw/")) raw++;
+      else if (f.path.startsWith("wiki/")) wiki++;
     }
-    try {
-      // Count raw/wiki files via vault listing (Obsidian-native).
-      const all = this.app.vault.getMarkdownFiles();
-      let raw = 0;
-      let wiki = 0;
-      for (const f of all) {
-        if (f.path.startsWith("raw/")) raw++;
-        else if (f.path.startsWith("wiki/")) wiki++;
-      }
-      this.statusBar.setText(`🧠 raw:${raw} · wiki:${wiki}`);
-    } catch {
-      this.statusBar.setText("🧠 LLM-KB");
-    }
+    this.statusBarEl.empty();
+    this.statusBarEl.createEl("span", {
+      text: `raw:${raw} · wiki:${wiki}`,
+      cls: "llm-kb-status",
+    });
   }
 
   private async activateLogView(): Promise<LlmKbLogView> {
@@ -148,7 +168,6 @@ export default class LlmKbPlugin extends Plugin {
     return leaf.view as LlmKbLogView;
   }
 
-  /** Move (or copy) the active note into raw/ with a timestamped prefix. */
   private async ingestCurrent(file: TFile): Promise<void> {
     const today = new Date().toISOString().slice(0, 10);
     const slug = file.basename.replace(/[^0-9a-zA-Z\u4e00-\u9fff]+/g, "-");
@@ -160,23 +179,18 @@ export default class LlmKbPlugin extends Plugin {
     }
 
     const content = await this.app.vault.read(file);
-    // Prepend a small frontmatter block if the note doesn't have one.
     let out = content;
     if (!content.startsWith("---\n")) {
       out =
-        `---\n` +
-        `title: ${file.basename}\n` +
-        `ingested_at: ${today}\n` +
-        `source: vault:${file.path}\n` +
-        `---\n\n` +
+        `---\ntitle: ${file.basename}\ningested_at: ${today}\nsource: vault:${file.path}\n---\n\n` +
         content;
     }
     await this.app.vault.create(newPath, out);
     new Notice(`Ingested → ${newPath}`);
-    await this.refreshStatusBar();
+    this.refreshStatusBar();
   }
 
-  /** Spawn `uv run python -m <module>` with --vault <vaultPath>. */
+  /** Spawn `uv run python -m <module>` and stream output to the log view. */
   private async runTool(module: string, extraArgs: string[]): Promise<void> {
     const vault = this.vaultPath();
     if (!vault) {
@@ -185,45 +199,24 @@ export default class LlmKbPlugin extends Plugin {
     }
     const view = await this.activateLogView();
     view.clear();
-    view.append(`$ ${this.settings.uvCommand} run python -m ${module} --vault ${vault}\n\n`);
+    view.append(`$ uv run python -m ${module}\n\n`);
 
     try {
       const code = await runStreaming({
         cmd: this.settings.uvCommand,
-        args: [
-          "run",
-          "python",
-          "-m",
-          module,
-          "--vault",
-          vault,
-          ...extraArgs,
-        ],
+        args: ["run", "python", "-m", module, "--vault", vault, ...extraArgs],
         cwd: this.settings.toolsPath,
         onStdout: (c) => view.append(c),
         onStderr: (c) => view.append(c),
       });
       view.append(`\n[exit ${code}]\n`);
-      await this.refreshStatusBar();
+      this.refreshStatusBar();
     } catch (e: unknown) {
       view.append(`\n[error] ${String(e)}\n`);
     }
   }
 
-  private async promptAndQuery(): Promise<void> {
-    new QueryModal(this.app, "Ask the wiki", "你的問題...", async (question) => {
-      if (!question.trim()) return;
-      await this.runTool("query.query", [question]);
-    }).open();
-  }
-
-  private async promptAndSearch(): Promise<void> {
-    new QueryModal(this.app, "Search wiki", "搜尋關鍵字...", async (query) => {
-      if (!query.trim()) return;
-      await this.runSearch(query);
-    }).open();
-  }
-
+  /** Run search and render structured results with clickable links. */
   private async runSearch(query: string): Promise<void> {
     const vault = this.vaultPath();
     if (!vault) {
@@ -232,32 +225,41 @@ export default class LlmKbPlugin extends Plugin {
     }
     const view = await this.activateLogView();
     view.clear();
-    view.append(`Searching: ${query}\n\n`);
 
     let output = "";
     try {
       await runStreaming({
         cmd: this.settings.uvCommand,
-        args: ["run", "python", "-m", "search.search", "--vault", vault, query],
+        args: [
+          "run", "python", "-m", "search.search",
+          "--vault", vault, "--json-out", query,
+        ],
         cwd: this.settings.toolsPath,
         onStdout: (c) => { output += c; },
         onStderr: (c) => { view.append(c); },
       });
 
-      // Parse search results and render with clickable links
-      const lines = output.split("\n");
-      for (const line of lines) {
-        const match = line.match(/^\s*\d+\.\s*\[[\d.]+\]\s*(.+\.md)\s*$/);
-        if (match) {
-          const filePath = match[1].trim();
-          view.appendLink(filePath, filePath);
-          view.append("\n");
-        } else if (line.match(/^\s{5}\S/)) {
-          // Context line (indented)
-          view.append(`  ${line.trim()}\n`);
-        } else if (line.trim()) {
-          view.append(line + "\n");
-        }
+      const results = JSON.parse(output) as Array<{
+        path: string;
+        score: number;
+        title: string;
+        context: string;
+      }>;
+
+      view.addSearchHeading(query, results.length);
+      for (let i = 0; i < results.length; i++) {
+        const r = results[i];
+        view.addSearchResult({
+          rank: i + 1,
+          score: r.score.toFixed(4),
+          filePath: r.path,
+          title: r.title,
+          context: r.context,
+        });
+      }
+
+      if (results.length === 0) {
+        new Notice(`No results for: ${query}`);
       }
     } catch (e: unknown) {
       view.append(`\n[error] ${String(e)}\n`);
@@ -265,33 +267,55 @@ export default class LlmKbPlugin extends Plugin {
   }
 }
 
-class QueryModal extends Modal {
-  constructor(
-    app: App,
-    private title: string,
-    private placeholder: string,
-    private onSubmit: (question: string) => void,
-  ) {
+// ── Input Modal ───────────────────────────────────────────
+
+interface InputModalOpts {
+  title: string;
+  placeholder: string;
+  buttonText: string;
+  onSubmit: (value: string) => void;
+}
+
+class InputModal extends Modal {
+  private opts: InputModalOpts;
+
+  constructor(app: App, opts: InputModalOpts) {
     super(app);
+    this.opts = opts;
   }
 
   onOpen(): void {
     const { contentEl } = this;
     contentEl.empty();
-    contentEl.createEl("h3", { text: this.title });
+    contentEl.addClass("llm-kb-modal");
+
+    contentEl.createEl("h3", { text: this.opts.title });
+
     const input = contentEl.createEl("textarea", {
-      attr: {
-        style: "width:100%;height:100px;",
-        placeholder: this.placeholder,
-      },
+      cls: "llm-kb-modal__input",
+      attr: { placeholder: this.opts.placeholder },
     });
-    const btn = contentEl.createEl("button", { text: "Ask" });
-    btn.style.marginTop = "8px";
-    btn.addEventListener("click", () => {
-      const q = input.value;
+
+    const btn = contentEl.createEl("button", {
+      text: this.opts.buttonText,
+      cls: "mod-cta",
+    });
+
+    this.registerDomEvent(btn, "click", () => {
+      const value = input.value.trim();
+      if (!value) return;
       this.close();
-      this.onSubmit(q);
+      this.opts.onSubmit(value);
     });
+
+    // Submit on Enter (without Shift)
+    this.registerDomEvent(input, "keydown", (e: KeyboardEvent) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+
     input.focus();
   }
 

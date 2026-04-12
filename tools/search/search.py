@@ -10,6 +10,7 @@ Usage:
 
 from __future__ import annotations
 
+import json
 import math
 import re
 import sys
@@ -90,6 +91,16 @@ def search(query: str, docs: list[tuple[Path, str, list[str]]], top_k: int = 10)
     return results[:top_k]
 
 
+def _extract_title(text: str) -> str:
+    """Extract title from frontmatter or first heading."""
+    for line in text.splitlines()[:15]:
+        if line.startswith("title:"):
+            return line.split(":", 1)[1].strip().strip('"').strip("'")
+        if line.startswith("# "):
+            return line[2:].strip()
+    return ""
+
+
 @click.command()
 @click.option(
     "--vault",
@@ -97,15 +108,34 @@ def search(query: str, docs: list[tuple[Path, str, list[str]]], top_k: int = 10)
     type=click.Path(exists=True, file_okay=False, path_type=Path),
 )
 @click.option("--top", default=10, help="Number of results to show.")
+@click.option("--json-out", "use_json", is_flag=True, default=False, help="Output as JSON.")
 @click.argument("query", type=str)
-def main(vault: Path, top: int, query: str) -> None:
+def main(vault: Path, top: int, use_json: bool, query: str) -> None:
     """Search the wiki and notes for a query."""
     docs = load_docs(vault)
     if not docs:
-        click.echo("No documents found in wiki/ or notes/.")
+        if use_json:
+            click.echo("[]")
+        else:
+            click.echo("No documents found in wiki/ or notes/.")
         sys.exit(1)
 
     results = search(query, docs, top_k=top)
+
+    if use_json:
+        out = []
+        for path, score, ctx in results:
+            rel = str(path.relative_to(vault))
+            text = path.read_text(encoding="utf-8", errors="replace")
+            out.append({
+                "path": rel,
+                "score": round(score, 4),
+                "title": _extract_title(text),
+                "context": ctx,
+            })
+        click.echo(json.dumps(out, ensure_ascii=False))
+        return
+
     if not results:
         click.echo(f"No results for: {query}")
         sys.exit(0)
