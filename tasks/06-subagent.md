@@ -1,4 +1,4 @@
-- [ ] Define the `kb-verifier` subagent
+- [x] Define the `kb-verifier` subagent
 
 ## Why
 After every compile/lint/reorg pass we want an independent agent to verify
