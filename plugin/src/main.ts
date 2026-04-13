@@ -65,22 +65,54 @@ export default class LlmKbPlugin extends Plugin {
     });
 
     this.addCommand({
+      id: "llm-kb-query-quick",
+      name: "Ask wiki (quick — hot cache only)",
+      callback: () => {
+        new InputModal(this.app, {
+          title: "Quick query (hot cache + index)",
+          placeholder: "你的問題...",
+          buttonText: "Ask",
+          onSubmit: (q) => this.runTool("query.query", ["--mode", "quick", q]),
+        }).open();
+      },
+    });
+
+    this.addCommand({
       id: "llm-kb-query",
-      name: "Ask the wiki",
+      name: "Ask wiki (standard — top articles)",
       callback: () => {
         new InputModal(this.app, {
           title: "Ask the wiki",
           placeholder: "你的問題...",
           buttonText: "Ask",
-          onSubmit: (q) => this.runTool("query.query", [q]),
+          onSubmit: (q) => this.runTool("query.query", ["--mode", "standard", q]),
+        }).open();
+      },
+    });
+
+    this.addCommand({
+      id: "llm-kb-query-deep",
+      name: "Ask wiki (deep — full vault)",
+      callback: () => {
+        new InputModal(this.app, {
+          title: "Deep query (full vault + web)",
+          placeholder: "你的問題...",
+          buttonText: "Ask",
+          onSubmit: (q) => this.runTool("query.query", ["--mode", "deep", q]),
         }).open();
       },
     });
 
     this.addCommand({
       id: "llm-kb-lint",
-      name: "Lint wiki",
+      name: "Lint wiki (8-category check)",
       callback: () => this.runTool("lint.lint", []),
+    });
+
+    this.addCommand({
+      id: "llm-kb-lint-json",
+      name: "Lint wiki (JSON output)",
+      callback: () => this.runTool("lint.lint", ["--json-out"]),
     });
 
     this.addCommand({

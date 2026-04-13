@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat '/Users/caesarchi/Library/CloudStorage/Dropbox/caesar_obsidian/wiki/hot.md' 2>/dev/null || echo '(hot cache not found)'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd '/Users/caesarchi/Library/CloudStorage/Dropbox/caesar_obsidian' && git diff --quiet wiki/ raw/ 2>/dev/null || (git add wiki/ raw/ .llm-kb/ 2>/dev/null && git commit -m 'auto: wiki/raw changes via Claude Code' --no-gpg-sign 2>/dev/null) || true"
+          }
+        ]
+      }
+    ]
+  }
+}
