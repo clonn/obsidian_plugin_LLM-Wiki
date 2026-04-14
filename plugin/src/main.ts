@@ -116,6 +116,18 @@ export default class LlmKbPlugin extends Plugin {
     });
 
     this.addCommand({
+      id: "llm-kb-pipeline",
+      name: "Pipeline: scan & ingest (Clippings → raw/)",
+      callback: () => this.runTool("pipeline.pipeline", ["--apply"]),
+    });
+
+    this.addCommand({
+      id: "llm-kb-pipeline-watch",
+      name: "Pipeline: watch mode (continuous)",
+      callback: () => this.runTool("pipeline.pipeline", ["--watch"]),
+    });
+
+    this.addCommand({
       id: "llm-kb-search",
       name: "Search wiki",
       callback: () => {
