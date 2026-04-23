@@ -1,15 +1,38 @@
 {
-  "name": "llm-kb",
-  "version": "0.1.0",
-  "description": "Karpathy-style LLM knowledge base plugin for Obsidian",
+  "name": "obsidian-llm-wiki",
+  "version": "0.3.0",
+  "description": "Karpathy-style LLM knowledge base plugin for Obsidian — ingest, compile, query, lint your vault with Claude Code.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
     "build": "node esbuild.config.mjs production"
   },
-  "keywords": ["obsidian", "llm", "knowledge-base"],
-  "author": "Caesar Chi",
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "llm",
+    "knowledge-base",
+    "karpathy",
+    "claude",
+    "wiki"
+  ],
+  "author": "clonn",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clonn/obsidian_plugin_LLM-Wiki.git"
+  },
+  "homepage": "https://github.com/clonn/obsidian_plugin_LLM-Wiki#readme",
+  "bugs": {
+    "url": "https://github.com/clonn/obsidian_plugin_LLM-Wiki/issues"
+  },
+  "files": [
+    "main.js",
+    "manifest.json",
+    "styles.css",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "@types/node": "^20.14.0",
     "builtin-modules": "^3.3.0",

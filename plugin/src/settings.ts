@@ -10,13 +10,16 @@ export interface LlmKbSettings {
   claudeCommand: string;
   /** Preferred KB language. */
   language: "zh-TW" | "en";
+  /** Automatically run `pipeline.pipeline --apply` when the plugin loads. */
+  autoRunPipelineOnLoad: boolean;
 }
 
 export const DEFAULT_SETTINGS: LlmKbSettings = {
-  toolsPath: "/Users/caesarchi/workspace/clonn/project_Obsidian_graph/tools",
-  uvCommand: "/Users/caesarchi/.local/bin/uv",
+  toolsPath: "",
+  uvCommand: "uv",
   claudeCommand: "claude",
   language: "zh-TW",
+  autoRunPipelineOnLoad: true,
 };
 
 export class LlmKbSettingTab extends PluginSettingTab {
@@ -65,6 +68,21 @@ export class LlmKbSettingTab extends PluginSettingTab {
           .setValue(this.plugin.settings.claudeCommand)
           .onChange(async (v) => {
             this.plugin.settings.claudeCommand = v.trim() || "claude";
+            await this.plugin.saveSettings();
+          }),
+      );
+
+    new Setting(containerEl)
+      .setName("Auto-run pipeline on startup")
+      .setDesc(
+        "On plugin load, run `uv run python -m pipeline.pipeline --apply` " +
+          "(Clippings → raw/ → compile → link). Requires a valid tools path.",
+      )
+      .addToggle((t) =>
+        t
+          .setValue(this.plugin.settings.autoRunPipelineOnLoad)
+          .onChange(async (v) => {
+            this.plugin.settings.autoRunPipelineOnLoad = v;
             await this.plugin.saveSettings();
           }),
       );

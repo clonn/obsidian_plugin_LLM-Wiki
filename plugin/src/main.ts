@@ -191,6 +191,20 @@ export default class LlmKbPlugin extends Plugin {
 
     // ── Settings tab ────────────────────────────────────────
     this.addSettingTab(new LlmKbSettingTab(this.app, this));
+
+    // ── Auto-run pipeline on startup (if configured) ────────
+    if (this.settings.autoRunPipelineOnLoad) {
+      // Defer until workspace is ready so the sidebar log view is attachable.
+      this.app.workspace.onLayoutReady(() => {
+        if (!this.settings.toolsPath) {
+          new Notice(
+            "LLM-KB: auto-run pipeline skipped — set Tools path in settings.",
+          );
+          return;
+        }
+        this.runTool("pipeline.pipeline", ["--apply"]);
+      });
+    }
   }
 
   onunload(): void {

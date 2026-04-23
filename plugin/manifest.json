@@ -1,10 +1,10 @@
 {
-  "id": "llm-kb",
-  "name": "LLM Knowledge Base",
-  "version": "0.1.0",
+  "id": "obsidian-llm-wiki",
+  "name": "LLM Wiki",
+  "version": "0.3.0",
   "minAppVersion": "1.5.0",
-  "description": "Karpathy-style LLM knowledge base commands: ingest, compile, query, lint. Bridges the Obsidian vault to Claude Code and the tools/ CLIs.",
-  "author": "Caesar Chi",
-  "authorUrl": "https://github.com/caesarchi",
+  "description": "Karpathy-style LLM knowledge base for Obsidian: ingest → compile → query → lint your vault with Claude Code. Includes an auto-pipeline (Clippings → raw → compile → link).",
+  "author": "clonn",
+  "authorUrl": "https://github.com/clonn",
   "isDesktopOnly": true
 }
