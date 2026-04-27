@@ -73,10 +73,10 @@ export class LlmKbSettingTab extends PluginSettingTab {
       );
 
     new Setting(containerEl)
-      .setName("Auto-run pipeline on startup")
+      .setName("Auto-ingest on startup")
       .setDesc(
-        "On plugin load, run `uv run python -m pipeline.pipeline --apply` " +
-          "(Clippings → raw/ → compile → link). Requires a valid tools path.",
+        "On plugin load, run pipeline (Clippings → raw/) and autolink. " +
+          "Requires a valid tools path.",
       )
       .addToggle((t) =>
         t

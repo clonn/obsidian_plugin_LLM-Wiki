@@ -6,6 +6,9 @@ plugin/.obsidian-build-cache/
 # NOTE: plugin/main.js is checked in so the vault symlink picks up a working
 # build without needing `npm run build` on every clone.
 
+# Per-vault plugin settings — created by Obsidian, contains absolute paths.
+plugin/data.json
+
 # Python / uv
 .venv/
 __pycache__/

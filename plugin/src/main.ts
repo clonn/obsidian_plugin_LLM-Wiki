@@ -1,6 +1,5 @@
 import {
   App,
-  Editor,
   Modal,
   Notice,
   Plugin,
@@ -15,6 +14,15 @@ import {
 import { LLM_KB_LOG_VIEW, LlmKbLogView } from "./sidebarView";
 import { runStreaming } from "./runner";
 
+/**
+ * Karpathy's 4-phase knowledge-base loop:
+ *   1. Ingest  — Clippings/ + vault root → raw/, then auto-link
+ *   2. Compile — emit prompt for Claude Code to write wiki articles
+ *   3. Query   — ask the wiki (mode picked in modal)
+ *   4. Lint    — find contradictions / dead links / gaps
+ *
+ * https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+ */
 export default class LlmKbPlugin extends Plugin {
   settings!: LlmKbSettings;
   statusBarEl!: HTMLElement;
@@ -22,153 +30,49 @@ export default class LlmKbPlugin extends Plugin {
   async onload(): Promise<void> {
     await this.loadSettings();
 
-    // ── Register view ───────────────────────────────────────
     this.registerView(
       LLM_KB_LOG_VIEW,
       (leaf: WorkspaceLeaf) => new LlmKbLogView(leaf),
     );
 
-    // ── Status bar (desktop only) ───────────────────────────
     this.statusBarEl = this.addStatusBarItem();
     this.statusBarEl.createEl("span", { text: "LLM-KB", cls: "llm-kb-status" });
     this.refreshStatusBar();
-    // Refresh counts every 30 seconds
     this.registerInterval(
       window.setInterval(() => this.refreshStatusBar(), 30_000),
     );
 
-    // ── Commands ────────────────────────────────────────────
+    // ── Karpathy's 4 phases ───────────────────────────────
 
-    // Ingest: only available when a file is open
     this.addCommand({
-      id: "llm-kb-ingest-current-note",
-      name: "Ingest current note into raw/",
-      checkCallback: (checking: boolean) => {
-        const file = this.app.workspace.getActiveFile();
-        if (!file) return false;
-        if (checking) return true;
-        this.ingestCurrent(file);
-        return true;
-      },
+      id: "llm-kb-ingest",
+      name: "1. Ingest — pipeline (Clippings → raw/) + autolink",
+      callback: () => this.runIngestChain(),
     });
 
     this.addCommand({
       id: "llm-kb-compile",
-      name: "Compile status",
-      callback: () => this.runTool("compile.compile", ["--status"]),
-    });
-
-    this.addCommand({
-      id: "llm-kb-compile-generate",
-      name: "Compile: generate prompt for Claude Code",
+      name: "2. Compile — generate wiki prompt for Claude Code",
       callback: () => this.runTool("compile.compile", ["--incremental"]),
     });
 
     this.addCommand({
-      id: "llm-kb-query-quick",
-      name: "Ask wiki (quick — hot cache only)",
-      callback: () => {
-        new InputModal(this.app, {
-          title: "Quick query (hot cache + index)",
-          placeholder: "你的問題...",
-          buttonText: "Ask",
-          onSubmit: (q) => this.runTool("query.query", ["--mode", "quick", q]),
-        }).open();
-      },
-    });
-
-    this.addCommand({
       id: "llm-kb-query",
-      name: "Ask wiki (standard — top articles)",
+      name: "3. Query — ask the wiki",
       callback: () => {
-        new InputModal(this.app, {
-          title: "Ask the wiki",
-          placeholder: "你的問題...",
-          buttonText: "Ask",
-          onSubmit: (q) => this.runTool("query.query", ["--mode", "standard", q]),
-        }).open();
-      },
-    });
-
-    this.addCommand({
-      id: "llm-kb-query-deep",
-      name: "Ask wiki (deep — full vault)",
-      callback: () => {
-        new InputModal(this.app, {
-          title: "Deep query (full vault + web)",
-          placeholder: "你的問題...",
-          buttonText: "Ask",
-          onSubmit: (q) => this.runTool("query.query", ["--mode", "deep", q]),
-        }).open();
+        new QueryModal(this.app, (q, mode) =>
+          this.runTool("query.query", ["--mode", mode, q]),
+        ).open();
       },
     });
 
     this.addCommand({
       id: "llm-kb-lint",
-      name: "Lint wiki (8-category check)",
+      name: "4. Lint — check vault integrity",
       callback: () => this.runTool("lint.lint", []),
     });
 
-    this.addCommand({
-      id: "llm-kb-lint-json",
-      name: "Lint wiki (JSON output)",
-      callback: () => this.runTool("lint.lint", ["--json-out"]),
-    });
-
-    this.addCommand({
-      id: "llm-kb-pipeline",
-      name: "Pipeline: scan & ingest (Clippings → raw/)",
-      callback: () => this.runTool("pipeline.pipeline", ["--apply"]),
-    });
-
-    this.addCommand({
-      id: "llm-kb-pipeline-watch",
-      name: "Pipeline: watch mode (continuous)",
-      callback: () => this.runTool("pipeline.pipeline", ["--watch"]),
-    });
-
-    this.addCommand({
-      id: "llm-kb-search",
-      name: "Search wiki",
-      callback: () => {
-        new InputModal(this.app, {
-          title: "Search wiki",
-          placeholder: "搜尋關鍵字...",
-          buttonText: "Search",
-          onSubmit: (q) => this.runSearch(q),
-        }).open();
-      },
-    });
-
-    this.addCommand({
-      id: "llm-kb-dashboard",
-      name: "Knowledge dashboard",
-      callback: () => this.runTool("status.dashboard", []),
-    });
-
-    this.addCommand({
-      id: "llm-kb-autolink",
-      name: "Auto-link notes (connect graph)",
-      callback: () => this.runTool("link.autolink", ["--apply"]),
-    });
-
-    this.addCommand({
-      id: "llm-kb-export-graph",
-      name: "Export link graph (JSON)",
-      callback: () => this.runTool("graph.export_graph", []),
-    });
-
-    this.addCommand({
-      id: "llm-kb-graph-analyze",
-      name: "Analyze graph (deep structure + canvas)",
-      callback: () => this.runTool("graph.analyze", ["--canvas"]),
-    });
-
-    this.addCommand({
-      id: "llm-kb-graph-strengthen",
-      name: "Strengthen graph connections",
-      callback: () => this.runTool("graph.strengthen", ["--apply"]),
-    });
+    // ── Navigation ────────────────────────────────────────
 
     this.addCommand({
       id: "llm-kb-open-index",
@@ -178,7 +82,7 @@ export default class LlmKbPlugin extends Plugin {
         if (file instanceof TFile) {
           await this.app.workspace.getLeaf(true).openFile(file);
         } else {
-          new Notice("index.md not found — run init first.");
+          new Notice("index.md not found.");
         }
       },
     });
@@ -189,20 +93,18 @@ export default class LlmKbPlugin extends Plugin {
       callback: () => this.activateLogView(),
     });
 
-    // ── Settings tab ────────────────────────────────────────
     this.addSettingTab(new LlmKbSettingTab(this.app, this));
 
-    // ── Auto-run pipeline on startup (if configured) ────────
+    // ── Auto-run ingest on startup ────────────────────────
     if (this.settings.autoRunPipelineOnLoad) {
-      // Defer until workspace is ready so the sidebar log view is attachable.
       this.app.workspace.onLayoutReady(() => {
         if (!this.settings.toolsPath) {
           new Notice(
-            "LLM-KB: auto-run pipeline skipped — set Tools path in settings.",
+            "LLM-KB: auto-ingest skipped — set Tools path in settings.",
           );
           return;
         }
-        this.runTool("pipeline.pipeline", ["--apply"]);
+        this.runIngestChain();
       });
     }
   }
@@ -212,11 +114,7 @@ export default class LlmKbPlugin extends Plugin {
   }
 
   async loadSettings(): Promise<void> {
-    this.settings = Object.assign(
-      {},
-      DEFAULT_SETTINGS,
-      await this.loadData(),
-    );
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
   }
 
   async saveSettings(): Promise<void> {
@@ -256,38 +154,25 @@ export default class LlmKbPlugin extends Plugin {
     return leaf.view as LlmKbLogView;
   }
 
-  private async ingestCurrent(file: TFile): Promise<void> {
-    const today = new Date().toISOString().slice(0, 10);
-    const slug = file.basename.replace(/[^0-9a-zA-Z\u4e00-\u9fff]+/g, "-");
-    const newPath = `raw/${today}_${slug}.md`;
-
-    if (this.app.vault.getAbstractFileByPath(newPath)) {
-      new Notice(`${newPath} already exists — skipping.`);
-      return;
-    }
-
-    const content = await this.app.vault.read(file);
-    let out = content;
-    if (!content.startsWith("---\n")) {
-      out =
-        `---\ntitle: ${file.basename}\ningested_at: ${today}\nsource: vault:${file.path}\n---\n\n` +
-        content;
-    }
-    await this.app.vault.create(newPath, out);
-    new Notice(`Ingested → ${newPath}`);
-    this.refreshStatusBar();
+  /** Phase 1: pipeline (Clippings → raw/) → autolink. */
+  private async runIngestChain(): Promise<void> {
+    await this.runTool("pipeline.pipeline", ["--apply"]);
+    await this.runTool("link.autolink", ["--apply"]);
   }
 
   /** Spawn `uv run python -m <module>` and stream output to the log view. */
-  private async runTool(module: string, extraArgs: string[]): Promise<void> {
+  private async runTool(module: string, extraArgs: string[]): Promise<number> {
     const vault = this.vaultPath();
     if (!vault) {
       new Notice("Cannot determine vault path.");
-      return;
+      return -1;
+    }
+    if (!this.settings.toolsPath) {
+      new Notice("LLM-KB: Tools path not set.");
+      return -1;
     }
     const view = await this.activateLogView();
-    view.clear();
-    view.append(`$ uv run python -m ${module}\n\n`);
+    view.append(`\n$ uv run python -m ${module} ${extraArgs.join(" ")}\n`);
 
     try {
       const code = await runStreaming({
@@ -297,107 +182,66 @@ export default class LlmKbPlugin extends Plugin {
         onStdout: (c) => view.append(c),
         onStderr: (c) => view.append(c),
       });
-      view.append(`\n[exit ${code}]\n`);
+      view.append(`[exit ${code}]\n`);
       this.refreshStatusBar();
+      return code;
     } catch (e: unknown) {
-      view.append(`\n[error] ${String(e)}\n`);
-    }
-  }
-
-  /** Run search and render structured results with clickable links. */
-  private async runSearch(query: string): Promise<void> {
-    const vault = this.vaultPath();
-    if (!vault) {
-      new Notice("Cannot determine vault path.");
-      return;
-    }
-    const view = await this.activateLogView();
-    view.clear();
-
-    let output = "";
-    try {
-      await runStreaming({
-        cmd: this.settings.uvCommand,
-        args: [
-          "run", "python", "-m", "search.search",
-          "--vault", vault, "--json-out", query,
-        ],
-        cwd: this.settings.toolsPath,
-        onStdout: (c) => { output += c; },
-        onStderr: (c) => { view.append(c); },
-      });
-
-      const results = JSON.parse(output) as Array<{
-        path: string;
-        score: number;
-        title: string;
-        context: string;
-      }>;
-
-      view.addSearchHeading(query, results.length);
-      for (let i = 0; i < results.length; i++) {
-        const r = results[i];
-        view.addSearchResult({
-          rank: i + 1,
-          score: r.score.toFixed(4),
-          filePath: r.path,
-          title: r.title,
-          context: r.context,
-        });
-      }
-
-      if (results.length === 0) {
-        new Notice(`No results for: ${query}`);
-      }
-    } catch (e: unknown) {
-      view.append(`\n[error] ${String(e)}\n`);
+      view.append(`[error] ${String(e)}\n`);
+      return -1;
     }
   }
 }
 
-// ── Input Modal ───────────────────────────────────────────
+// ── Query modal with mode picker ──────────────────────────
 
-interface InputModalOpts {
-  title: string;
-  placeholder: string;
-  buttonText: string;
-  onSubmit: (value: string) => void;
-}
+type QueryMode = "quick" | "standard" | "deep";
 
-class InputModal extends Modal {
-  private opts: InputModalOpts;
+class QueryModal extends Modal {
+  private onSubmit: (query: string, mode: QueryMode) => void;
 
-  constructor(app: App, opts: InputModalOpts) {
+  constructor(app: App, onSubmit: (q: string, m: QueryMode) => void) {
     super(app);
-    this.opts = opts;
+    this.onSubmit = onSubmit;
   }
 
   onOpen(): void {
     const { contentEl } = this;
     contentEl.empty();
     contentEl.addClass("llm-kb-modal");
+    contentEl.createEl("h3", { text: "Query the wiki" });
 
-    contentEl.createEl("h3", { text: this.opts.title });
+    const modeRow = contentEl.createDiv({ cls: "llm-kb-modal__mode" });
+    modeRow.createEl("label", { text: "Mode: " });
+    const modeSelect = modeRow.createEl("select");
+    for (const [value, label] of [
+      ["quick", "Quick — hot cache + index"],
+      ["standard", "Standard — top articles"],
+      ["deep", "Deep — full vault + web"],
+    ] as const) {
+      const opt = modeSelect.createEl("option", { text: label });
+      opt.value = value;
+    }
+    modeSelect.value = "standard";
 
     const input = contentEl.createEl("textarea", {
       cls: "llm-kb-modal__input",
-      attr: { placeholder: this.opts.placeholder },
+      attr: { placeholder: "你的問題..." },
     });
 
     const btn = contentEl.createEl("button", {
-      text: this.opts.buttonText,
+      text: "Ask",
       cls: "mod-cta",
     });
 
     const submit = () => {
       const value = input.value.trim();
       if (!value) return;
+      const mode = modeSelect.value as QueryMode;
       this.close();
-      this.opts.onSubmit(value);
+      this.onSubmit(value, mode);
     };
 
     btn.addEventListener("click", submit);
-
     input.addEventListener("keydown", (e: KeyboardEvent) => {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();

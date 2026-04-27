@@ -1,9 +1,9 @@
 {
   "id": "obsidian-llm-wiki",
   "name": "LLM Wiki",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "minAppVersion": "1.5.0",
-  "description": "Karpathy-style LLM knowledge base for Obsidian: ingest → compile → query → lint your vault with Claude Code. Includes an auto-pipeline (Clippings → raw → compile → link).",
+  "description": "Karpathy 4-phase loop in Obsidian: Ingest → Compile → Query → Lint. Auto-ingests from Clippings/ and auto-links on plugin load.",
   "author": "clonn",
   "authorUrl": "https://github.com/clonn",
   "isDesktopOnly": true
